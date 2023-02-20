@@ -1,5 +1,8 @@
 export const theme = {
   primary: {
+    mainBG: {
+      main: 'rgb(35,30,47)',
+    },
     dark: {
       main: 'rgb(0,0,0)',
       threeQuarterAlpha: 'rgba(0,0,0,.75)',

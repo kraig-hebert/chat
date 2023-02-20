@@ -6,9 +6,6 @@ const appSettings = createSlice({
   name: 'appSettings',
   initialState,
   reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase();
-  },
 });
 
 export const {} = appSettings.actions;
