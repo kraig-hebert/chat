@@ -1,4 +1,5 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './mainStyles';
@@ -10,6 +11,9 @@ const Main = (props) => {
   return (
     <div className={classes.main}>
       <UserBar />
+      <Routes>
+        <Route path="/" element={}/>
+      </Routes>
     </div>
   );
 };
