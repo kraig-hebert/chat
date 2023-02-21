@@ -1,13 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState = {
+  activeMenu: 'direct-messages',
+};
 
 const appSettings = createSlice({
   name: 'appSettings',
   initialState,
-  reducers: {},
+  reducers: {
+    menuIconSelected(state, action) {
+      const activeMenu = action.payload;
+      state.activeMenu = activeMenu;
+    },
+  },
 });
 
-export const {} = appSettings.actions;
+export const selectActiveMenu = (state) => state.appSettings.activeMenu;
+
+export const { menuIconSelected } = appSettings.actions;
 
 export default appSettings.reducer;

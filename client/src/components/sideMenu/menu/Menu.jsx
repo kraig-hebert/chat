@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   IoChatboxOutline,
@@ -18,18 +18,39 @@ import { useStyles } from './menuStyles';
 
 const Menu = (props) => {
   const {} = props;
+
   const classes = useStyles();
 
   return (
     <div className={classes.menu}>
       <div className={classes.upperIcons}>
-        <MenuIcon icon={<IoHomeOutline />} hoverIcon={<IoHome />} />
-        <MenuIcon icon={<IoChatboxOutline />} hoverIcon={<IoChatbox />} />
-        <MenuIcon icon={<IoPeopleOutline />} hoverIcon={<IoPeople />} />
-        <MenuIcon icon={<IoBusinessOutline />} hoverIcon={<IoBusiness />} />
+        <MenuIcon
+          icon={<IoHomeOutline />}
+          activeIcon={<IoHome />}
+          menuName="home"
+        />
+        <MenuIcon
+          icon={<IoChatboxOutline />}
+          activeIcon={<IoChatbox />}
+          menuName="direct-messages"
+        />
+        <MenuIcon
+          icon={<IoPeopleOutline />}
+          activeIcon={<IoPeople />}
+          menuName="friends"
+        />
+        <MenuIcon
+          icon={<IoBusinessOutline />}
+          activeIcon={<IoBusiness />}
+          menuName="rooms"
+        />
       </div>
       <div className={classes.lowerIcons}>
-        <MenuIcon icon={<IoSettings />} hoverIcon={<IoSettingsOutline />} />
+        <MenuIcon
+          icon={<IoSettingsOutline />}
+          activeIcon={<IoSettings />}
+          menuName="settings"
+        />
       </div>
     </div>
   );
