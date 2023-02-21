@@ -20,6 +20,9 @@ export const useStyles = createUseStyles((theme) => ({
       fontSize: '16px',
       backgroundColor: theme.mainBG.main,
     },
+    button: {
+      border: 'none',
+    },
   },
   app: {
     display: 'flex',
