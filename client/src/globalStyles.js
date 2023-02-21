@@ -25,7 +25,7 @@ export const useStyles = createUseStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '1200px',
-    height: '700px',
+    height: '800px',
     backgroundColor: theme.mainBG.main,
     padding: '0 30px',
     borderRadius: '30px',
