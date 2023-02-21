@@ -1,6 +1,6 @@
 export const theme = {
   mainBG: {
-    main: 'rgb(35,30,47)',
+    main: 'rgba(35,30,40,.95)',
   },
   dark: {
     main: 'rgb(0,0,0)',

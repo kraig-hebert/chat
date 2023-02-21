@@ -22,9 +22,12 @@ export const useStyles = createUseStyles((theme) => ({
   },
   app: {
     display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     width: '1200px',
     height: '700px',
     backgroundColor: theme.mainBG.main,
+    padding: '0 30px',
     borderRadius: '30px',
   },
 }));

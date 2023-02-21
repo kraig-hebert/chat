@@ -6,7 +6,7 @@ import { useStyles } from './mainStyles';
 const Main = (props) => {
   const {} = props;
   const classes = useStyles();
-  return <div>Main</div>;
+  return <div className={classes.main}>Main</div>;
 };
 
 Main.propTypes = {};
