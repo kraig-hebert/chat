@@ -18,6 +18,7 @@ export const useStyles = createUseStyles((theme) => ({
       width: '100%',
       fontFamily: 'Arial, sans-serif',
       fontSize: '16px',
+      backgroundColor: theme.mainBG.main,
     },
   },
   app: {
@@ -26,7 +27,6 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     width: '1200px',
     height: '800px',
-    backgroundColor: theme.mainBG.main,
     padding: '0 30px',
     borderRadius: '30px',
   },

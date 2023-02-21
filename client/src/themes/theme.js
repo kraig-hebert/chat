@@ -1,9 +1,15 @@
 export const theme = {
   mainBG: {
-    main: 'rgba(35,30,40,.95)',
+    main: 'rgb(45,45,51)',
   },
   secondary: {
-    main: 'rgb(56,51,65)',
+    main: 'rgba(102,102,110,.8)',
+  },
+  tertiary: {
+    main: 'rgb(153,153,153)',
+  },
+  blue: {
+    main: 'rgb(65,131,196)',
   },
   dark: {
     main: 'rgb(0,0,0)',
@@ -14,7 +20,7 @@ export const theme = {
     transparant: 'rgba(0,0,0,0)',
   },
   light: {
-    main: 'rgb(255,255,255)',
+    main: 'rgba(255,255,255,.8)',
     threeQuarterAlpha: 'rgba(255,255,255,.75)',
     halfAlpha: 'rgba(255,255,255,.5)',
     quarterAlpha: 'rgba(255,255,255,.25)',

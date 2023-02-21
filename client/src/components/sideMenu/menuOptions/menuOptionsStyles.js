@@ -8,9 +8,9 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     width: '75%',
     height: '100%',
-    border: `2px solid ${theme.light.main}`,
-    borderTopRightRadius: '30px',
-    borderBottomRightRadius: '30px',
+    border: `1px solid ${theme.tertiary.main}`,
+    borderTopRightRadius: '10px',
+    borderBottomRightRadius: '10px',
     backgroundColor: theme.secondary.main,
   },
 }));
