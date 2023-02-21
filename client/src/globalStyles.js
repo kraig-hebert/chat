@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-export const useStyles = createUseStyles({
+export const useStyles = createUseStyles((theme) => ({
   '@global': {
     '*': {
       boxSizing: 'border-box',
@@ -24,7 +24,7 @@ export const useStyles = createUseStyles({
     display: 'flex',
     width: '1200px',
     height: '700px',
-    backgroundColor: 'yellow',
+    backgroundColor: theme.mainBG.main,
     borderRadius: '30px',
   },
-});
+}));
