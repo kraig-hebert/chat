@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { useStyles } from './sideMenuStyles';
 import Menu from './menu/Menu';
+import MenuOptions from './menuOptions/MenuOptions';
 
 const SideMenu = (props) => {
   const {} = props;
@@ -10,6 +11,7 @@ const SideMenu = (props) => {
   return (
     <div className={classes.sideMenu}>
       <Menu />
+      <MenuOptions />
     </div>
   );
 };

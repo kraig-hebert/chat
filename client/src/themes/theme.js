@@ -2,6 +2,9 @@ export const theme = {
   mainBG: {
     main: 'rgba(35,30,40,.95)',
   },
+  secondary: {
+    main: 'rgb(56,51,65)',
+  },
   dark: {
     main: 'rgb(0,0,0)',
     threeQuarterAlpha: 'rgba(0,0,0,.75)',
