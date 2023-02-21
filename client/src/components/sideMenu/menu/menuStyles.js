@@ -4,12 +4,25 @@ export const useStyles = createUseStyles((theme) => ({
   menu: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     width: '25%',
     height: '100%',
     borderTopLeftRadius: '10px',
     borderBottomLeftRadius: '10px',
     backgroundColor: theme.blue.main,
+  },
+  upperIcons: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    height: '60%',
+  },
+  lowerIcons: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '20%',
   },
 }));
