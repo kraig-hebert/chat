@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { useStyles } from './mainStyles';
 import UserBar from './userBar/UserBar';
+import DirectMessages from '../pages/directMessages/DirectMessages';
 
 const Main = (props) => {
   const {} = props;
@@ -12,7 +13,7 @@ const Main = (props) => {
     <div className={classes.main}>
       <UserBar />
       <Routes>
-        <Route path="/" element={}/>
+        <Route path="/" element={<DirectMessages />} />
       </Routes>
     </div>
   );

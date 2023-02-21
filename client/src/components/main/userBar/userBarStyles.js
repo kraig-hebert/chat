@@ -6,7 +6,7 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     width: '100%',
     height: '50px',
-    borderRadius: '20px',
+    borderRadius: '15px',
     border: `2px solid ${theme.light.main}`,
     backgroundColor: theme.secondary.main,
   },
