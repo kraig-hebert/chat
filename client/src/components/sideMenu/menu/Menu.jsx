@@ -9,6 +9,8 @@ import {
   IoPeople,
   IoBusinessOutline,
   IoBusiness,
+  IoEarth,
+  IoEarthOutline,
   IoSettings,
   IoSettingsOutline,
 } from 'react-icons/io5';
@@ -42,7 +44,12 @@ const Menu = (props) => {
         <MenuIcon
           icon={<IoBusinessOutline />}
           activeIcon={<IoBusiness />}
-          menuName="rooms"
+          menuName="hangouts"
+        />
+        <MenuIcon
+          icon={<IoEarthOutline />}
+          activeIcon={<IoEarth />}
+          menuName="explore"
         />
       </div>
       <div className={classes.lowerIcons}>

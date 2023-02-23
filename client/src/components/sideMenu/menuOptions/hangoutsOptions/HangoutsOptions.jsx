@@ -7,7 +7,7 @@ const HangoutsOptions = (props) => {
   const {} = props;
   const classes = useStyles();
 
-  return <div className={classes.friendsOptions}>HangoutsOptions</div>;
+  return <div className={classes.hangoutsOptions}>HangoutsOptions</div>;
 };
 
 HangoutsOptions.propTypes = {};
