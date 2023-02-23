@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { useStyles } from './menuOptionsStyles';
 import MenuSearchInput from './menuSearchInput/MenuSearchInput';
-import DirectMessageOptions from './directMessageOptions/DirectMessageOptions';
+import DirectMessagesOptions from './directMessagesOptions/DirectMessagesOptions';
 
 const MenuOptions = (props) => {
   const {} = props;
@@ -14,7 +14,7 @@ const MenuOptions = (props) => {
     <div className={classes.menuOptions}>
       <MenuSearchInput />
       <Routes>
-        <Route path="/" element={<DirectMessageOptions />} />
+        <Route path="/" element={<DirectMessagesOptions />} />
       </Routes>
     </div>
   );
