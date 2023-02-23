@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import {
@@ -17,9 +18,11 @@ const MenuIcon = (props) => {
   const handleIconClick = () => dispatch(menuIconSelected(menuName));
 
   return (
-    <div className={classes.menuIcon} onClick={handleIconClick}>
-      {activeMenu === menuName ? activeIcon : icon}
-    </div>
+    <Link to={menuName}>
+      <div className={classes.menuIcon} onClick={handleIconClick}>
+        {activeMenu === menuName ? activeIcon : icon}
+      </div>
+    </Link>
   );
 };
 
