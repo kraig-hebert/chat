@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { useStyles } from './hangoutsStyles';
+import { useStyles } from './homeStyles';
 
 const Home = (props) => {
   const {} = props;
