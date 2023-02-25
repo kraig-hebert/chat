@@ -7,6 +7,5 @@ export const useStyles = createUseStyles({
     justifyContent: 'flex-start',
     alignItems: 'center',
     width: '100%',
-    paddingTop: '20px',
   },
 });
