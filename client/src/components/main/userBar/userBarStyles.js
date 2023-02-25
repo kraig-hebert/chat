@@ -33,8 +33,11 @@ export const useStyles = createUseStyles((theme) => ({
     color: theme.mainBG.main,
     fontSize: '2rem',
     cursor: 'pointer',
-    '&:first-of-type': {
-      marginRight: '10px',
+    '&:active': {
+      color: theme.blue.main,
+    },
+    '&:last-of-type': {
+      marginLeft: '10px',
     },
   },
 }));

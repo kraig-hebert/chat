@@ -29,6 +29,7 @@ const MenuIcon = (props) => {
 MenuIcon.propTypes = {
   icon: PropTypes.objectOf(Symbol),
   activeIcon: PropTypes.objectOf(Symbol),
+  menuName: PropTypes.string,
 };
 
 export default MenuIcon;
