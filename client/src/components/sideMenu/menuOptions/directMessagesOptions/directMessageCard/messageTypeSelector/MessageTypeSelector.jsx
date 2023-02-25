@@ -4,20 +4,18 @@ import PropTypes from 'prop-types';
 import { useStyles } from './messageTypeSelectorStyles';
 
 const MessageTypeSelector = (props) => {
-  const {} = props;
-
-  const [selectedType, setSelectedType] = useState('solo');
+  const { selectedType, setSelectedType } = props;
 
   const setStyles = () => {
     if (selectedType === 'solo') {
       return {
-        left: '3px',
-        transform: 'translateX(0)',
+        left: '100%',
+        transform: 'translateX(-104%)',
       };
     } else if (selectedType == 'group') {
       return {
-        left: '100%',
-        transform: 'translateX(-104%)',
+        left: '3px',
+        transform: 'translateX(0)',
       };
     }
   };
@@ -38,6 +36,9 @@ const MessageTypeSelector = (props) => {
   );
 };
 
-MessageTypeSelector.propTypes = {};
+MessageTypeSelector.propTypes = {
+  selectedType: PropTypes.string,
+  setSelectedType: PropTypes.func,
+};
 
 export default MessageTypeSelector;

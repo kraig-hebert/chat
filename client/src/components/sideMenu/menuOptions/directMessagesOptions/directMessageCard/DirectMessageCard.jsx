@@ -6,16 +6,19 @@ import { useStyles } from './directMessageCardStyles';
 import MessageInfo from './messageInfo/MessageInfo';
 
 const DirectMessageCard = (props) => {
-  const {} = props;
+  const { message } = props;
   const classes = useStyles();
+
   return (
     <div className={classes.directMessageCard}>
       <IoPersonCircle className={classes.icon} />
-      <MessageInfo />
+      <MessageInfo message={message} />
     </div>
   );
 };
 
-DirectMessageCard.propTypes = {};
+DirectMessageCard.propTypes = {
+  message: PropTypes.object,
+};
 
 export default DirectMessageCard;

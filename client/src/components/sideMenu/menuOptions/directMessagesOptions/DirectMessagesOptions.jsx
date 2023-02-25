@@ -1,17 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './directMessagesOptionsStyles';
 import DirectMessageCard from './directMessageCard/DirectMessageCard';
 import MessageTypeSelector from './directMessageCard/messageTypeSelector/MessageTypeSelector';
 
+//import dummyData for cards
+import dummyData from './dummyData';
+
 const DirectMessagesOptions = (props) => {
   const {} = props;
   const classes = useStyles();
+
+  const [selectedType, setSelectedType] = useState('solo');
+
+  const renderedSoloCards = dummyData.solo.map((message, index) => (
+    <DirectMessageCard message={message} key={index} />
+  ));
+  const renderedGroupCards = dummyData.group.map((message, index) => (
+    <DirectMessageCard message={message} key={index} />
+  ));
+
+  const renderCards = () => {
+    if (selectedType === 'solo') return renderedSoloCards;
+    else if (selectedType === 'group') return renderedGroupCards;
+  };
+
   return (
     <div className={classes.directMessagesOptions}>
-      <MessageTypeSelector />
-      <DirectMessageCard />
+      <MessageTypeSelector
+        selectedType={selectedType}
+        setSelectedType={setSelectedType}
+      />
+      {renderCards()}
     </div>
   );
 };
