@@ -1,0 +1,3 @@
+BUG FIXES
+-------------------------------------------------------------------------
+- when user navigates backwards and forwards the active MenuIcon does not change with the page route
