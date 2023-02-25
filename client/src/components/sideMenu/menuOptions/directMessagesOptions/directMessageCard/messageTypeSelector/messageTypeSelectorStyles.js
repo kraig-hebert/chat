@@ -6,7 +6,7 @@ export const useStyles = createUseStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    width: '70%',
+    width: '150px',
     backgroundColor: theme.blue.main,
     margin: '10px 0',
     height: '25px',
@@ -17,12 +17,16 @@ export const useStyles = createUseStyles((theme) => ({
       color: theme.mainBG.main,
     },
   },
-  selectorThumb: {
+  selectorThumb: (props) => ({
     position: 'absolute',
-    left: '3px',
+    left: props.left,
+    right: props.right,
     width: '75px',
     height: '20px',
     borderRadius: '3px',
     backgroundColor: theme.mainBG.main,
-  },
+    transform: props.transform,
+    transition: '.35s',
+    cursor: 'pointer',
+  }),
 }));
