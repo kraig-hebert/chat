@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 import { useStyles } from './messageBoardStyles';
 
 const MessageBoard = (props) => {
-  const {} = props;
-  const classes = useStyles();
+  const { height } = props;
+  const classes = useStyles({ height });
 
   return <div className={classes.messageBoard}>MessageBoard</div>;
 };
 
-MessageBoard.propTypes = {};
+MessageBoard.propTypes = {
+  height: PropTypes.number,
+};
 
 export default MessageBoard;

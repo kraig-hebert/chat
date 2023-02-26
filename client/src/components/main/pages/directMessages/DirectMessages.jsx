@@ -6,8 +6,8 @@ import MessageBoard from './messageBoard/MessageBoard';
 import MessageBar from './messageBar/MessageBar';
 
 const DirectMessages = (props) => {
-  const {} = props;
-  const classes = useStyles();
+  const { height } = props;
+  const classes = useStyles({ height });
 
   return (
     <div className={classes.directMessages}>
@@ -17,6 +17,8 @@ const DirectMessages = (props) => {
   );
 };
 
-DirectMessages.propTypes = {};
+DirectMessages.propTypes = {
+  height: PropTypes.number,
+};
 
 export default DirectMessages;
