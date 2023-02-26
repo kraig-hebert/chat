@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import { useStyles } from './messageBoardStyles';
 
+//import dummyData for messageDisplay
+import dummyData from './dummyData';
+
 const MessageBoard = (props) => {
   const { height } = props;
   const classes = useStyles({ height });
