@@ -1,3 +1,18 @@
 BUG FIXES
 -------------------------------------------------------------------------
 - when user navigates backwards and forwards the active MenuIcon does not change with the page route
+
+*************************************************************************
+
+FEATURES
+-------------------------------------------------------------------------
+DIRECT-MESSAGES
+- create logic to change styling of active conversation
+    - use the theme.blue.main color for background
+    - test color combinations on the fly for other parts of card
+- create a component for the group message cards with its own layout
+    - possibly have group member list that opens on a button click
+    - this list could have a max size and then the button shows
+    - stack in two columns for layout.....each user would be component with its own logic
+- each message whether solo or group should have a badge that shows the number of unread messages 
+    - if conversation is active or once opened the badge would disapear
