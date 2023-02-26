@@ -7,17 +7,16 @@ const MessageTypeSelector = (props) => {
   const { selectedType, setSelectedType } = props;
 
   const setStyles = () => {
-    if (selectedType === 'solo') {
+    if (selectedType === 'solo')
       return {
         left: '100%',
         transform: 'translateX(-104%)',
       };
-    } else if (selectedType == 'group') {
+    else if (selectedType == 'group')
       return {
         left: '3px',
         transform: 'translateX(0)',
       };
-    }
   };
 
   const classes = useStyles(setStyles());
