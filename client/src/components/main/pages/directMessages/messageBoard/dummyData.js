@@ -1,7 +1,7 @@
 const dummyData = {
   messages: [
     {
-      title: 'jsmith376',
+      user: 'sender',
       date: '2020-08-12T23:50:21.817Z',
     },
   ],
