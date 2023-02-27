@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from 'react-jss';
 import { LoremIpsum } from 'lorem-ipsum';
+import { format } from 'date-fns';
 
 import { useStyles } from './messageBlockStyles';
 
@@ -33,7 +34,7 @@ const MessageBlock = (props) => {
     <div className={classes.messageBlock}>
       <div className={classes.messageHeader}>
         <p>{message.user}</p>
-        <p>{message.date}</p>
+        <p>{format(new Date(message.date), 'hh:mm:ss aaa MM/dd/yyyy')}</p>
       </div>
       <div className={classes.messageText}>
         <p>{lorem.generateParagraphs(1)}</p>

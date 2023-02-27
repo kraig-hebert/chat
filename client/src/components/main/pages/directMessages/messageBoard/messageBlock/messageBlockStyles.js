@@ -12,9 +12,16 @@ export const useStyles = createUseStyles((theme) => ({
   }),
   messageHeader: {
     display: 'flex',
+    marginBottom: '5px',
+
     '& p': {
       fontSize: '.8rem',
       '&:first-of-type': {
+        color: theme.light.main,
+        marginRight: '10px',
+      },
+      '&:last-of-type': {
+        color: theme.secondary.main,
         marginRight: '10px',
       },
     },
