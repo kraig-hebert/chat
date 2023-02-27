@@ -1,17 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { loremIpsum } from 'lorem-ipsum';
+import { useTheme } from 'react-jss';
+import { LoremIpsum } from 'lorem-ipsum';
 
 import { useStyles } from './messageBlockStyles';
 
 const MessageBlock = (props) => {
   const { message } = props;
+  const theme = useTheme();
 
-  let alignItems;
-  if (message.user === 'khebert24') alignItems = 'flex-start';
-  else if (message.user === 'jsmith376') alignItems = 'flex-end';
+  const lorem = new LoremIpsum({
+    sentencesPerParagraph: {
+      max: 5,
+      min: 1,
+    },
+    wordsPerSentence: {
+      max: 16,
+      min: 4,
+    },
+  });
 
-  const classes = useStyles({ alignItems });
+  const setStyles = () => {
+    if (message.user === 'khebert24')
+      return { alignItems: 'flex-start', backgroundColor: theme.tertiary.main };
+    else if (message.user === 'jsmith376')
+      return { alignItems: 'flex-end', backgroundColor: theme.blue.main };
+  };
+
+  const classes = useStyles(setStyles());
 
   return (
     <div className={classes.messageBlock}>
@@ -19,7 +35,9 @@ const MessageBlock = (props) => {
         <p>{message.user}</p>
         <p>{message.date}</p>
       </div>
-      <p>{loremIpsum()}</p>
+      <div className={classes.messageText}>
+        <p>{lorem.generateParagraphs(1)}</p>
+      </div>
     </div>
   );
 };

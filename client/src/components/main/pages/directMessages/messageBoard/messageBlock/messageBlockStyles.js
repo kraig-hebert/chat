@@ -9,7 +9,6 @@ export const useStyles = createUseStyles((theme) => ({
     width: '100%',
     padding: '10px',
     marginTop: '5px',
-    backgroundColor: 'yellow',
   }),
   messageHeader: {
     display: 'flex',
@@ -20,4 +19,10 @@ export const useStyles = createUseStyles((theme) => ({
       },
     },
   },
+  messageText: (props) => ({
+    width: '90%',
+    padding: '10px',
+    borderRadius: '5px',
+    backgroundColor: props.backgroundColor,
+  }),
 }));
