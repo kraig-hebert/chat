@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './messageBoardStyles';
@@ -14,9 +14,13 @@ const renderedMessageBlocks = dummyData.messages.map((message, index) => (
 const MessageBoard = (props) => {
   const {} = props;
   const classes = useStyles();
+  const containerRef = useRef();
 
+  useEffect(() => {
+    containerRef.current.scrollTop = containerRef.current.scrollHeight;
+  }, []);
   return (
-    <div className={classes.messageBoardContainer}>
+    <div className={classes.messageBoardContainer} ref={containerRef}>
       <div className={classes.messageBoard}>{renderedMessageBlocks}</div>
     </div>
   );
