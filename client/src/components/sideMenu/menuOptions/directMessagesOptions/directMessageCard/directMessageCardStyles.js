@@ -10,6 +10,11 @@ export const useStyles = createUseStyles((theme) => ({
     marginBottom: '20px',
     backgroundColor: theme.tertiary.main,
     borderRadius: '5px',
+    cursor: 'pointer',
+  },
+  activeDirectMessageCard: {
+    extend: 'directMessageCard',
+    backgroundColor: theme.blue.main,
   },
   icon: {
     color: theme.mainBG.main,
