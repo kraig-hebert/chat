@@ -35,7 +35,10 @@ const MenuOptions = (props) => {
       />
 
       <Routes>
-        <Route path="/" element={<DirectMessagesOptions />} />
+        <Route
+          path="/"
+          element={<DirectMessagesOptions inputValue={inputValue} />}
+        />
         <Route path="/home" element={<HomeOptions />} />
         <Route path="/direct-messages" element={<DirectMessagesOptions />} />
         <Route path="/friends" element={<FriendsOptions />} />

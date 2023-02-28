@@ -9,7 +9,7 @@ import MessageTypeSelector from './directMessageCard/messageTypeSelector/Message
 import dummyData from './dummyData';
 
 const DirectMessagesOptions = (props) => {
-  const {} = props;
+  const { inputValue } = props;
   const classes = useStyles();
 
   const [selectedType, setSelectedType] = useState('solo');
@@ -22,8 +22,14 @@ const DirectMessagesOptions = (props) => {
   ));
 
   const renderCards = () => {
-    if (selectedType === 'solo') return renderedSoloCards;
-    else if (selectedType === 'group') return renderedGroupCards;
+    if (selectedType === 'solo') {
+      return renderedSoloCards.filter((card) =>
+        card.props.message.title.includes(inputValue)
+      );
+    } else if (selectedType === 'group')
+      return renderedGroupCards.filter((card) =>
+        card.props.message.title.includes(inputValue)
+      );
   };
 
   return (
@@ -37,6 +43,8 @@ const DirectMessagesOptions = (props) => {
   );
 };
 
-DirectMessagesOptions.propTypes = {};
+DirectMessagesOptions.propTypes = {
+  inputValue: PropTypes.string,
+};
 
 export default DirectMessagesOptions;
