@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { IoSearchCircleOutline, IoSearchCircle } from 'react-icons/io5';
 
 import { useStyles } from './menuOptionsStyles';
-import MenuSearchInput from './menuSearchInput/MenuSearchInput';
+import TextInput from '../../common/textInput/TextInput';
 import DirectMessagesOptions from './directMessagesOptions/DirectMessagesOptions';
 import HomeOptions from './homeOptions/HomeOptions';
 import FriendsOptions from './friendsOptions/FriendsOptions';
@@ -15,9 +16,20 @@ const MenuOptions = (props) => {
   const {} = props;
   const classes = useStyles();
 
+  const [inputValue, setInputValue] = useState('');
+
   return (
     <div className={classes.menuOptions}>
-      <MenuSearchInput />
+      <TextInput
+        width="100%"
+        height="30px"
+        placeholder="Search"
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        Icon={IoSearchCircleOutline}
+        FocusedIcon={IoSearchCircle}
+      />
+
       <Routes>
         <Route path="/" element={<DirectMessagesOptions />} />
         <Route path="/home" element={<HomeOptions />} />
