@@ -8,7 +8,7 @@ export const useStyles = createUseStyles((theme) => ({
     overflowY: 'scroll',
     overflowX: 'hidden',
     '&::-webkit-scrollbar': {
-      width: '20px',
+      width: '10px',
     },
     '&::-webkit-scrollbar-track-piece': {
       backgroundColor: theme.tertiary.main,
@@ -17,7 +17,6 @@ export const useStyles = createUseStyles((theme) => ({
     '&::-webkit-scrollbar-thumb': {
       backgroundColor: theme.blue.main,
       borderRadius: '5px',
-      width: '10px',
     },
   },
   messageBoard: {
