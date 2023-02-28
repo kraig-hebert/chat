@@ -28,9 +28,7 @@ export const useStyles = createUseStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '1200px',
-    height: '800px',
-    padding: '0 30px',
-    borderRadius: '30px',
+    width: '1100px',
+    height: '100%',
   },
 }));
