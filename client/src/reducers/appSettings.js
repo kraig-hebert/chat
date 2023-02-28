@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   activeMenu: 'direct-messages',
+  activeDirectMessageThread: '',
 };
 
 const appSettings = createSlice({
@@ -12,11 +13,18 @@ const appSettings = createSlice({
       const activeMenu = action.payload;
       state.activeMenu = activeMenu;
     },
+    directMessageThreadSelected(state, action) {
+      const userName = action.payload;
+      state.activeDirectMessageThread = userName;
+    },
   },
 });
 
 export const selectActiveMenu = (state) => state.appSettings.activeMenu;
+export const selectActiveDirectMessageThread = (state) =>
+  state.appSettings.activeDirectMessageThread;
 
-export const { menuIconSelected } = appSettings.actions;
+export const { menuIconSelected, directMessageThreadSelected } =
+  appSettings.actions;
 
 export default appSettings.reducer;

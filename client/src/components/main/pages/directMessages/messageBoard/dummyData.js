@@ -1,31 +1,31 @@
 const dummyData = {
   messages: [
     {
-      user: 'khebert24',
+      user: 'receiver',
       date: '2020-08-12T23:50:21.817Z',
     },
     {
-      user: 'jsmith376',
+      user: 'sender',
       date: '2020-08-12T23:50:21.817Z',
     },
     {
-      user: 'khebert24',
+      user: 'receiver',
       date: '2020-08-12T23:50:21.817Z',
     },
     {
-      user: 'jsmith376',
+      user: 'sender',
       date: '2020-08-12T23:50:21.817Z',
     },
     {
-      user: 'khebert24',
+      user: 'receiver',
       date: '2020-08-12T23:50:21.817Z',
     },
     {
-      user: 'jsmith376',
+      user: 'sender',
       date: '2020-08-12T23:50:21.817Z',
     },
     {
-      user: 'khebert24',
+      user: 'receiver',
       date: '2020-08-12T23:50:21.817Z',
     },
   ],

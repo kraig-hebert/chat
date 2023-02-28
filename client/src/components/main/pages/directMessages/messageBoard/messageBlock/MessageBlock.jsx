@@ -1,14 +1,19 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useTheme } from 'react-jss';
 import { LoremIpsum } from 'lorem-ipsum';
 import { format } from 'date-fns';
 
+import { selectActiveDirectMessageThread } from '../../../../../../reducers/appSettings';
 import { useStyles } from './messageBlockStyles';
 
 const MessageBlock = (props) => {
   const { message } = props;
   const theme = useTheme();
+  const activeDirectMessageThread = useSelector(
+    selectActiveDirectMessageThread
+  );
 
   const lorem = new LoremIpsum({
     sentencesPerParagraph: {
@@ -22,9 +27,9 @@ const MessageBlock = (props) => {
   });
 
   const setStyles = () => {
-    if (message.user === 'khebert24')
+    if (message.user === 'receiver')
       return { alignItems: 'flex-start', backgroundColor: theme.tertiary.main };
-    else if (message.user === 'jsmith376')
+    else if (message.user === 'sender')
       return { alignItems: 'flex-end', backgroundColor: theme.blue.main };
   };
 
@@ -33,7 +38,11 @@ const MessageBlock = (props) => {
   return (
     <div className={classes.messageBlock}>
       <div className={classes.messageHeader}>
-        <p>{message.user}</p>
+        <p>
+          {message.user === 'receiver'
+            ? 'khebert24'
+            : activeDirectMessageThread}
+        </p>
         <p>{format(new Date(message.date), 'hh:mm:ss aaa MM/dd/yyyy')}</p>
       </div>
       <div className={classes.messageText}>
