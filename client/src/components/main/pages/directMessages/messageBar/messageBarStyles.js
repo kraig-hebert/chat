@@ -5,8 +5,8 @@ export const useStyles = createUseStyles((theme) => ({
     position: 'relative',
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
     width: '100%',
-    height: '50px',
   }),
   inputPlaceholder: {
     position: 'absolute',
@@ -19,7 +19,7 @@ export const useStyles = createUseStyles((theme) => ({
   },
   input: {
     width: '92%',
-    height: '100%',
+    height: '40px',
     backgroundColor: theme.secondary.main,
     borderRadius: '5px',
     border: 'none',

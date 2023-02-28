@@ -28,10 +28,6 @@ const dummyData = {
       user: 'khebert24',
       date: '2020-08-12T23:50:21.817Z',
     },
-    {
-      user: 'khebert24',
-      date: '2020-08-12T23:50:21.817Z',
-    },
   ],
 };
 
