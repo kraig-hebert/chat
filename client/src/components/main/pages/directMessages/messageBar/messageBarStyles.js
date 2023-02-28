@@ -1,13 +1,13 @@
 import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles((theme) => ({
-  messageBar: {
+  messageBar: (props) => ({
     position: 'relative',
     display: 'flex',
     justifyContent: 'space-between',
     width: '100%',
-    height: '5%',
-  },
+    height: '50px',
+  }),
   inputPlaceholder: {
     position: 'absolute',
     left: '20px',

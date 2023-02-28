@@ -12,14 +12,16 @@ const renderedMessageBlocks = dummyData.messages.map((message, index) => (
 ));
 
 const MessageBoard = (props) => {
-  const { height } = props;
-  const classes = useStyles({ height });
+  const {} = props;
+  const classes = useStyles();
 
-  return <div className={classes.messageBoard}>{renderedMessageBlocks}</div>;
+  return (
+    <div className={classes.messageBoardContainer}>
+      <div className={classes.messageBoard}>{renderedMessageBlocks}</div>
+    </div>
+  );
 };
 
-MessageBoard.propTypes = {
-  height: PropTypes.number,
-};
+MessageBoard.propTypes = {};
 
 export default MessageBoard;
