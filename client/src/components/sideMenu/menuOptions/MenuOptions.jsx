@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useTheme } from 'react-jss';
 import { IoSearchCircleOutline, IoSearchCircle } from 'react-icons/io5';
 
 import { useStyles } from './menuOptionsStyles';
@@ -15,14 +16,17 @@ import SettingsOptions from './settingsOptions/SettingsOptions';
 const MenuOptions = (props) => {
   const {} = props;
   const classes = useStyles();
+  const theme = useTheme();
 
   const [inputValue, setInputValue] = useState('');
 
   return (
     <div className={classes.menuOptions}>
       <TextInput
-        width="100%"
+        width="80%"
         height="30px"
+        backgroundColor={theme.mainBG.main}
+        textColor={theme.light.main}
         placeholder="Search"
         inputValue={inputValue}
         setInputValue={setInputValue}

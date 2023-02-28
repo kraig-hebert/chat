@@ -7,26 +7,8 @@ export const useStyles = createUseStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
+    padding: '2px',
   }),
-  inputPlaceholder: {
-    position: 'absolute',
-    left: '20px',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    color: theme.light.main,
-    fontSize: '.8rem',
-    pointerEvents: 'none',
-  },
-  input: {
-    width: '92%',
-    height: '40px',
-    backgroundColor: theme.secondary.main,
-    borderRadius: '5px',
-    border: 'none',
-    '&:active, &:focus': {
-      outline: '2px solid ' + theme.blue.main,
-    },
-  },
   messageBarButton: {
     width: '35px',
     height: '35px',

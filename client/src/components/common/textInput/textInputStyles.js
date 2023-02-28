@@ -1,16 +1,22 @@
 import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles((theme) => ({
-  textInputContainer: {
-    position: 'relative',
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
   },
-  textInput: (props) => ({
+  textInputContainer: (props) => ({
+    position: 'relative',
     width: props.width,
+  }),
+  textInput: (props) => ({
+    width: '100%',
     height: props.height,
     paddingLeft: '30px',
-    backgroundColor: theme.mainBG.main,
-    caretColor: theme.light.main,
-    color: theme.light.main,
+    backgroundColor: props.backgroundColor,
+    caretColor: props.textColor,
+    color: props.textColor,
     borderRadius: '5px',
     border: 'none',
     '&:active, &:focus': {
@@ -21,16 +27,16 @@ export const useStyles = createUseStyles((theme) => ({
       },
     },
   }),
-  inputPlaceholder: {
+  inputPlaceholder: (props) => ({
     transition: '.2s',
     position: 'absolute',
     left: '30px',
     top: '50%',
     transform: 'translateY(-50%)',
-    color: theme.light.halfAlpha,
+    color: props.textColor,
     fontSize: '.9rem',
     pointerEvents: 'none',
-  },
+  }),
   icon: {
     position: 'absolute',
     left: '5px',
