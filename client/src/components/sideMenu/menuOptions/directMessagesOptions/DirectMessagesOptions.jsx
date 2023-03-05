@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 import { useStyles } from './directMessagesOptionsStyles';
 import DirectMessageCard from './directMessageCard/DirectMessageCard';
-import MessageTypeSelector from './directMessageCard/messageTypeSelector/MessageTypeSelector';
+import GroupCard from './groupCard/GroupCard';
+import MessageTypeSelector from './messageTypeSelector/MessageTypeSelector';
 
 //import dummyData for cards
 import { users, groups } from '../../../../data/dummyData';
@@ -19,7 +20,8 @@ const DirectMessagesOptions = (props) => {
         .filter((user) => user.startsWith(inputValue))
         .map((user, index) => {
           const data = {
-            user: user,
+            type: 'solo',
+            user,
             date: new Date(),
           };
           return <DirectMessageCard cardData={data} key={index} />;
@@ -29,10 +31,11 @@ const DirectMessagesOptions = (props) => {
         .filter((group) => group.title.startsWith(inputValue))
         .map((group, index) => {
           const data = {
-            user: group.title,
+            type: 'group',
+            group,
             date: new Date(),
           };
-          return <DirectMessageCard cardData={data} key={index} />;
+          return <GroupCard cardData={data} key={index} />;
         });
     }
   };
