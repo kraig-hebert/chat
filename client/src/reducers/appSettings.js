@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   activeMenu: 'direct-messages',
-  activeDirectMessageThread: 'jsmith376',
+  activeDirectMessageThread: 'XjsmithX',
 };
 
 const appSettings = createSlice({

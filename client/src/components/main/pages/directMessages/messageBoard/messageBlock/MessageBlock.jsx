@@ -27,10 +27,9 @@ const MessageBlock = (props) => {
   });
 
   const setStyles = () => {
-    if (message.user === 'receiver')
+    if (message.user === 'khebert24')
       return { alignItems: 'flex-start', backgroundColor: theme.tertiary.main };
-    else if (message.user === 'sender')
-      return { alignItems: 'flex-end', backgroundColor: theme.blue.main };
+    else return { alignItems: 'flex-end', backgroundColor: theme.blue.main };
   };
 
   const classes = useStyles(setStyles());
@@ -38,11 +37,7 @@ const MessageBlock = (props) => {
   return (
     <div className={classes.messageBlock}>
       <div className={classes.messageHeader}>
-        <p>
-          {message.user === 'receiver'
-            ? 'khebert24'
-            : activeDirectMessageThread}
-        </p>
+        <p>{message.user}</p>
         <p>{format(new Date(message.date), 'hh:mm:ss aaa MM/dd/yyyy')}</p>
       </div>
       <div className={classes.messageText}>

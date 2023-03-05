@@ -7,21 +7,39 @@ import { useStyles } from './messageBoardStyles';
 import MessageBlock from './messageBlock/MessageBlock';
 
 //import dummyData for messageDisplay
-import dummyData from './dummyData';
-
-const renderedMessageBlocks = dummyData.messages.map((message, index) => (
-  <MessageBlock message={message} key={index} />
-));
+import { users } from '../../../../../data/dummyData';
+import { addSeconds } from 'date-fns';
+const now = new Date();
 
 const MessageBoard = (props) => {
   const {} = props;
   const classes = useStyles();
   const containerRef = useRef();
-  const activeDirectMessageThead = useSelector(selectActiveDirectMessageThread);
+  const activeDirectMessageThread = useSelector(
+    selectActiveDirectMessageThread
+  );
+  const indexOfActiveMessagethread = users.indexOf(activeDirectMessageThread);
+
+  const isEven = (number) => number % 2 === 0;
+  const setUser = (i) => {
+    if (isEven(i)) {
+      return users[indexOfActiveMessagethread];
+    } else return 'khebert24';
+  };
+
+  const renderedMessageBlocks = [];
+
+  for (let i = 1; i <= 6; i++) {
+    const message = {
+      user: setUser(i),
+      date: addSeconds(now, i),
+    };
+    renderedMessageBlocks.push(<MessageBlock message={message} key={i} />);
+  }
 
   useEffect(() => {
     containerRef.current.scrollTop = containerRef.current.scrollHeight;
-  }, [activeDirectMessageThead]);
+  }, [activeDirectMessageThread]);
 
   return (
     <div className={classes.messageBoardContainer} ref={containerRef}>
