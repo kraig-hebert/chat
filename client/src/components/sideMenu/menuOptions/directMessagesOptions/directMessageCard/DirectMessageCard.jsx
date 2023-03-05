@@ -11,7 +11,7 @@ import { useStyles } from './directMessageCardStyles';
 import MessageInfo from './messageInfo/MessageInfo';
 
 const DirectMessageCard = (props) => {
-  const { message } = props;
+  const { cardData } = props;
   const dispatch = useDispatch();
   const activeDirectMessageThread = useSelector(
     selectActiveDirectMessageThread
@@ -19,25 +19,25 @@ const DirectMessageCard = (props) => {
   const classes = useStyles();
 
   const handleCardClick = () =>
-    dispatch(directMessageThreadSelected(message.title));
+    dispatch(directMessageThreadSelected(cardData.user));
 
   return (
     <div
       className={
-        message.title === activeDirectMessageThread
+        cardData.user === activeDirectMessageThread
           ? classes.activeDirectMessageCard
           : classes.directMessageCard
       }
       onClick={handleCardClick}
     >
       <IoPersonCircle className={classes.icon} />
-      <MessageInfo message={message} />
+      <MessageInfo cardData={cardData} />
     </div>
   );
 };
 
 DirectMessageCard.propTypes = {
-  message: PropTypes.object,
+  cardData: PropTypes.object,
 };
 
 export default DirectMessageCard;

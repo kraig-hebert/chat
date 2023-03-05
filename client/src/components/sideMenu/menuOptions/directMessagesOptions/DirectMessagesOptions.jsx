@@ -7,30 +7,36 @@ import MessageTypeSelector from './directMessageCard/messageTypeSelector/Message
 
 //import dummyData for cards
 import dummyData from './dummyData';
+import { users, groups } from '../../../../data/dummyData';
 
 const DirectMessagesOptions = (props) => {
   const { inputValue } = props;
   const classes = useStyles();
 
   const [selectedType, setSelectedType] = useState('solo');
+  const renderCards = () => {
+    if (selectedType === 'solo') {
+      return users.map((user, index) => {
+        const data = {
+          user: user,
+          date: new Date(),
+        };
+        return <DirectMessageCard cardData={data} key={index} />;
+      });
+    } else if (selectedType === 'group') {
+      return groups.map((group, index) => {
+        const data = {
+          user: group.title,
+          date: new Date(),
+        };
+        return <DirectMessageCard cardData={data} key={index} />;
+      });
+    }
+  };
 
-  const renderedSoloCards = dummyData.solo.map((message, index) => (
-    <DirectMessageCard message={message} key={index} />
-  ));
   const renderedGroupCards = dummyData.group.map((message, index) => (
     <DirectMessageCard message={message} key={index} />
   ));
-
-  const renderCards = () => {
-    if (selectedType === 'solo') {
-      return renderedSoloCards.filter((card) =>
-        card.props.message.title.includes(inputValue)
-      );
-    } else if (selectedType === 'group')
-      return renderedGroupCards.filter((card) =>
-        card.props.message.title.includes(inputValue)
-      );
-  };
 
   return (
     <div className={classes.directMessagesOptions}>

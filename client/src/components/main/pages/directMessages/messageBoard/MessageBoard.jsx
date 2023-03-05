@@ -29,7 +29,7 @@ const MessageBoard = (props) => {
 
   const renderedMessageBlocks = [];
 
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 8; i++) {
     const message = {
       user: setUser(i),
       date: addSeconds(now, i),
