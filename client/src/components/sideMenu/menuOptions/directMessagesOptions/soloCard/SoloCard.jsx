@@ -7,10 +7,10 @@ import {
   directMessageThreadSelected,
   selectActiveDirectMessageThread,
 } from '../../../../../reducers/appSettings';
-import { useStyles } from './directMessageCardStyles';
+import { useStyles } from './soloCardStyles';
 import MessageInfo from './messageInfo/MessageInfo';
 
-const DirectMessageCard = (props) => {
+const SoloCard = (props) => {
   const { cardData } = props;
   const dispatch = useDispatch();
   const activeDirectMessageThread = useSelector(
@@ -25,8 +25,8 @@ const DirectMessageCard = (props) => {
     <div
       className={
         cardData.user === activeDirectMessageThread
-          ? classes.activeDirectMessageCard
-          : classes.directMessageCard
+          ? classes.activeSoloCard
+          : classes.soloCard
       }
       onClick={handleCardClick}
     >
@@ -36,8 +36,8 @@ const DirectMessageCard = (props) => {
   );
 };
 
-DirectMessageCard.propTypes = {
+SoloCard.propTypes = {
   cardData: PropTypes.object,
 };
 
-export default DirectMessageCard;
+export default SoloCard;

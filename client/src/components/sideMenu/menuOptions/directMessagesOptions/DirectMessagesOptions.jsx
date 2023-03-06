@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './directMessagesOptionsStyles';
-import DirectMessageCard from './directMessageCard/DirectMessageCard';
+import SoloCard from './soloCard/SoloCard';
 import GroupCard from './groupCard/GroupCard';
 import MessageTypeSelector from './messageTypeSelector/MessageTypeSelector';
 
@@ -24,7 +24,7 @@ const DirectMessagesOptions = (props) => {
             user,
             date: new Date(),
           };
-          return <DirectMessageCard cardData={data} key={index} />;
+          return <SoloCard cardData={data} key={index} />;
         });
     } else if (selectedType === 'group') {
       return groups

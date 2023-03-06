@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles((theme) => ({
-  directMessageCard: {
+  soloCard: {
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -12,8 +12,8 @@ export const useStyles = createUseStyles((theme) => ({
     borderRadius: '5px',
     cursor: 'pointer',
   },
-  activeDirectMessageCard: {
-    extend: 'directMessageCard',
+  activeSoloCard: {
+    extend: 'soloCard',
     backgroundColor: theme.blue.main,
   },
   icon: {

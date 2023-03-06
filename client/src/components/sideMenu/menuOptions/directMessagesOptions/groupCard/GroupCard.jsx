@@ -25,8 +25,8 @@ const GroupCard = (props) => {
     <div
       className={
         cardData.group.title === activeDirectMessageThread
-          ? classes.activeDirectMessageCard
-          : classes.directMessageCard
+          ? classes.activeGroupCard
+          : classes.groupCard
       }
       onClick={handleCardClick}
     >

@@ -12,8 +12,8 @@ export const useStyles = createUseStyles((theme) => ({
     borderRadius: '5px',
     cursor: 'pointer',
   },
-  activeDirectMessageCard: {
-    extend: 'directMessageCard',
+  activeGroupCard: {
+    extend: 'groupCard',
     backgroundColor: theme.blue.main,
   },
   icon: {
