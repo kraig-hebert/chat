@@ -20,7 +20,7 @@ export const theme = {
     transparant: 'rgba(0,0,0,0)',
   },
   light: {
-    main: 'rgba(255,255,255,.8)',
+    main: 'rgb(255,255,255)',
     threeQuarterAlpha: 'rgba(255,255,255,.75)',
     halfAlpha: 'rgba(255,255,255,.5)',
     quarterAlpha: 'rgba(255,255,255,.25)',
