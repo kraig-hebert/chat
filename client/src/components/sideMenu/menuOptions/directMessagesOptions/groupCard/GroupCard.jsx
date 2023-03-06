@@ -9,6 +9,7 @@ import {
 } from '../../../../../reducers/appSettings';
 
 import { useStyles } from './groupCardStyles';
+import MemberList from './memberList/MemberList';
 
 const GroupCard = (props) => {
   const { cardData } = props;
@@ -30,8 +31,11 @@ const GroupCard = (props) => {
       }
       onClick={handleCardClick}
     >
-      <IoPersonCircle className={classes.icon} />
-      {/* <MessageInfo cardData={cardData} /> */}
+      <div className={classes.cardInfo}>
+        <IoPersonCircle className={classes.icon} />
+        <p className={classes.groupTitle}>{cardData.group.title}</p>
+      </div>
+      <MemberList members={cardData.group.members} />
     </div>
   );
 };
