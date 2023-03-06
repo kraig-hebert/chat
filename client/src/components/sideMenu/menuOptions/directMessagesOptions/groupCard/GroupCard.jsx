@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-  IoPersonCircle,
+  IoPeopleCircle,
   IoEllipsisVertical,
   IoEllipsisVerticalOutline,
 } from 'react-icons/io5';
@@ -39,7 +39,7 @@ const GroupCard = (props) => {
       }
     >
       <div className={classes.groupInfo} onClick={handleCardClick}>
-        <IoPersonCircle className={classes.groupIcon} />
+        <IoPeopleCircle className={classes.groupIcon} />
         <p className={classes.groupTitle}>{cardData.group.title}</p>
       </div>
       <IoEllipsisVertical

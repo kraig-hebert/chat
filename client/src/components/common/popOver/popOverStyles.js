@@ -9,11 +9,9 @@ export const useStyles = createUseStyles((theme) => ({
   popOver: {
     position: 'relative',
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'center',
-    padding: '8px',
-    borderRadius: '2px',
+    borderRadius: '3px',
     backgroundColor: theme.light.main,
   },
   closeIcon: {
@@ -22,5 +20,6 @@ export const useStyles = createUseStyles((theme) => ({
     right: '5px',
     color: theme.light.main,
     cursor: 'pointer',
+    fontSize: '1.15rem',
   },
 }));
