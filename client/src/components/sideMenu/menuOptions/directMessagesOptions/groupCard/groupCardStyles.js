@@ -2,9 +2,9 @@ import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles((theme) => ({
   groupCard: {
+    position: 'relative',
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     width: '80%',
     marginBottom: '20px',
@@ -16,20 +16,21 @@ export const useStyles = createUseStyles((theme) => ({
     extend: 'groupCard',
     backgroundColor: theme.blue.main,
   },
-  cardInfo: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    width: '80%',
-    height: '100%',
-    borderBottom: `2px solid ${theme.mainBG.main}`,
-  },
   icon: {
     color: theme.mainBG.main,
     fontSize: '2.75rem',
+    margin: '0 10px',
   },
   groupTitle: {
     color: theme.mainBG.main,
     fontWeight: '700',
+  },
+  optionsIcon: {
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    right: '5px',
+    fontSize: '1.25rem',
+    color: theme.mainBG.main,
   },
 }));

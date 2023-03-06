@@ -13,6 +13,6 @@ export const useStyles = createUseStyles((theme) => ({
     color: theme.mainBG.main,
     fontSize: '.6rem',
     textAlign: 'center',
-    margin: '1px 0',
+    margin: '2px 0',
   },
 }));

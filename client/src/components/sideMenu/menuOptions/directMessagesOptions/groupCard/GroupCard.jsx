@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { IoPersonCircle } from 'react-icons/io5';
+import {
+  IoPersonCircle,
+  IoEllipsisVertical,
+  IoEllipsisVerticalOutline,
+} from 'react-icons/io5';
 
 import {
   directMessageThreadSelected,
@@ -22,6 +26,7 @@ const GroupCard = (props) => {
   const handleCardClick = () =>
     dispatch(directMessageThreadSelected(cardData.group.title));
 
+  const handleOptionsClick = () => {};
   return (
     <div
       className={
@@ -31,11 +36,13 @@ const GroupCard = (props) => {
       }
       onClick={handleCardClick}
     >
-      <div className={classes.cardInfo}>
-        <IoPersonCircle className={classes.icon} />
-        <p className={classes.groupTitle}>{cardData.group.title}</p>
-      </div>
-      <MemberList members={cardData.group.members} />
+      <IoPersonCircle className={classes.icon} />
+      <p className={classes.groupTitle}>{cardData.group.title}</p>
+      <IoEllipsisVertical
+        className={classes.optionsIcon}
+        onClick={handleOptionsClick}
+      />
+      {/* <MemberList members={cardData.group.members} /> */}
     </div>
   );
 };
