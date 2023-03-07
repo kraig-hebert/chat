@@ -14,6 +14,6 @@ export const groups = [
   },
   {
     title: 'Homies',
-    members: ['theDRUMF', 'clulessWonderman', 'Da-Mayne-Qwayne'],
+    members: ['theDRUMF', 'Da-Mayne-Qwayne', 'MontySnek'],
   },
 ];

@@ -6,10 +6,8 @@ import { useStyles } from './popOverStyles';
 
 const PopOver = (props) => {
   const { showPopOver, setShowPopOver, children } = props;
-
   const classes = useStyles();
 
-  const handleCloseClick = () => setShowPopOver(false);
   return (
     <>
       {showPopOver && (
@@ -18,7 +16,7 @@ const PopOver = (props) => {
             {children}
             <IoCloseCircle
               className={classes.closeIcon}
-              onClick={handleCloseClick}
+              onClick={() => setShowPopOver(false)}
             />
           </div>
         </div>
@@ -30,7 +28,7 @@ const PopOver = (props) => {
 PopOver.propTypes = {
   showPopOver: PropTypes.bool,
   setShowPopOver: PropTypes.func,
-  children: PropTypes.symbol,
+  children: PropTypes.object,
 };
 
 export default PopOver;

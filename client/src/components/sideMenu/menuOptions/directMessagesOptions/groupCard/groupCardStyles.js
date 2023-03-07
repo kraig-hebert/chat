@@ -16,7 +16,7 @@ export const useStyles = createUseStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    width: '100%',
+    width: '90%',
     cursor: 'pointer',
   },
   activeGroupCard: {

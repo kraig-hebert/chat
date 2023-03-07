@@ -15,7 +15,7 @@ const CardOption = (props) => {
 };
 
 CardOption.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.object,
   title: PropTypes.string,
 };
 

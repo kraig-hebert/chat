@@ -28,8 +28,8 @@ const GroupCard = (props) => {
   const handleCardClick = () =>
     dispatch(directMessageThreadSelected(cardData.group.title));
 
-  const [showOptions, setShowOptions] = useState(false);
-  const handleOptionsClick = () => setShowOptions(true);
+  const [showPopOver, setShowPopOver] = useState(false);
+  const handleOptionsClick = () => setShowPopOver(true);
   return (
     <div
       className={
@@ -46,12 +46,12 @@ const GroupCard = (props) => {
         className={classes.optionsIcon}
         onClick={handleOptionsClick}
       />
+      {/* <MemberList members={cardData.group.members} /> */}
       <PopOver
-        showPopOver={showOptions}
-        setShowPopOver={setShowOptions}
+        showPopOver={showPopOver}
+        setShowPopOver={setShowPopOver}
         children={<GroupCardOptions />}
       />
-      {/* <MemberList members={cardData.group.members} /> */}
     </div>
   );
 };

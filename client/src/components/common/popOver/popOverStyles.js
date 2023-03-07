@@ -1,11 +1,11 @@
 import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles((theme) => ({
-  popOverContainer: (props) => ({
+  popOverContainer: {
     position: 'absolute',
     left: '105%',
     boxShadow: `0px 0px 10px ${theme.dark.main}`,
-  }),
+  },
   popOver: {
     position: 'relative',
     display: 'flex',
