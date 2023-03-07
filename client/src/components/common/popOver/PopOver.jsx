@@ -6,24 +6,20 @@ import { useStyles } from './popOverStyles';
 
 const PopOver = (props) => {
   const { showPopOver, setShowPopOver, children } = props;
-  const classes = useStyles();
+  const classes = useStyles({ showPopOver });
 
   const handlePopOverClose = () => setShowPopOver(false);
 
   return (
-    <>
-      {showPopOver && (
-        <div className={classes.popOverContainer} onClick={handlePopOverClose}>
-          <div className={classes.popOver}>
-            {children}
-            <IoCloseCircle
-              className={classes.closeIcon}
-              onClick={handlePopOverClose}
-            />
-          </div>
-        </div>
-      )}
-    </>
+    <div className={classes.popOverContainer} onClick={handlePopOverClose}>
+      <div className={classes.popOver}>
+        {children}
+        <IoCloseCircle
+          className={classes.closeIcon}
+          onClick={handlePopOverClose}
+        />
+      </div>
+    </div>
   );
 };
 

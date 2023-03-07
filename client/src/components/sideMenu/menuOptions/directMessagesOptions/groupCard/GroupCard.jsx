@@ -30,7 +30,6 @@ const GroupCard = (props) => {
 
   const [showPopOver, setShowPopOver] = useState(false);
   const [showMembers, setShowMembers] = useState(false);
-  console.log(showMembers);
   const handleOptionsClick = () => setShowPopOver(true);
   return (
     <div

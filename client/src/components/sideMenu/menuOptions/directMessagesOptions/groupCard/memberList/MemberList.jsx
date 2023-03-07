@@ -7,8 +7,10 @@ const MemberList = (props) => {
   const { members } = props;
   const classes = useStyles();
 
-  const renderedMemberNames = members.map((member) => (
-    <p className={classes.memberName}>{member}</p>
+  const renderedMemberNames = members.map((member, index) => (
+    <p className={classes.memberName} key={index}>
+      {member}
+    </p>
   ));
 
   return <div className={classes.memberList}>{renderedMemberNames}</div>;

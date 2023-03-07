@@ -9,7 +9,7 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     width: '80%',
     marginBottom: '20px',
-    padding: '5px',
+    padding: '0 5px',
     backgroundColor: theme.tertiary.main,
     borderRadius: '5px',
   },
