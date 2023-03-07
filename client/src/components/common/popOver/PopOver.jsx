@@ -8,15 +8,17 @@ const PopOver = (props) => {
   const { showPopOver, setShowPopOver, children } = props;
   const classes = useStyles();
 
+  const handlePopOverClose = () => setShowPopOver(false);
+
   return (
     <>
       {showPopOver && (
-        <div className={classes.popOverContainer}>
+        <div className={classes.popOverContainer} onClick={handlePopOverClose}>
           <div className={classes.popOver}>
             {children}
             <IoCloseCircle
               className={classes.closeIcon}
-              onClick={() => setShowPopOver(false)}
+              onClick={handlePopOverClose}
             />
           </div>
         </div>

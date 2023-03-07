@@ -6,7 +6,8 @@ export const useStyles = createUseStyles((theme) => ({
     gridTemplateColumns: 'repeat(2, 1fr)',
     gridTemplateRows: 'auto',
     width: '100%',
-    margin: '10px 0',
+    padding: '10px 0',
+    borderTop: `1px solid ${theme.mainBG.main}`,
   },
   memberName: {
     justifySelf: 'center',

@@ -29,6 +29,8 @@ const GroupCard = (props) => {
     dispatch(directMessageThreadSelected(cardData.group.title));
 
   const [showPopOver, setShowPopOver] = useState(false);
+  const [showMembers, setShowMembers] = useState(false);
+  console.log(showMembers);
   const handleOptionsClick = () => setShowPopOver(true);
   return (
     <div
@@ -38,19 +40,21 @@ const GroupCard = (props) => {
           : classes.groupCard
       }
     >
-      <div className={classes.groupInfo} onClick={handleCardClick}>
-        <IoPeopleCircle className={classes.groupIcon} />
-        <p className={classes.groupTitle}>{cardData.group.title}</p>
+      <div className={classes.groupInfoContainer}>
+        <div className={classes.groupInfo} onClick={handleCardClick}>
+          <IoPeopleCircle className={classes.groupIcon} />
+          <p className={classes.groupTitle}>{cardData.group.title}</p>
+        </div>
+        <IoEllipsisVertical
+          className={classes.optionsIcon}
+          onClick={handleOptionsClick}
+        />
       </div>
-      <IoEllipsisVertical
-        className={classes.optionsIcon}
-        onClick={handleOptionsClick}
-      />
-      {/* <MemberList members={cardData.group.members} /> */}
+      {showMembers && <MemberList members={cardData.group.members} />}
       <PopOver
         showPopOver={showPopOver}
         setShowPopOver={setShowPopOver}
-        children={<GroupCardOptions />}
+        children={<GroupCardOptions setShowMembers={setShowMembers} />}
       />
     </div>
   );

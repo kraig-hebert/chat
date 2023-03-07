@@ -6,16 +6,22 @@ import { useStyles } from './groupCardOptionsStyles';
 import CardOption from './cardOption/CardOption';
 
 const GroupCardOptions = (props) => {
-  const {} = props;
+  const { setShowMembers } = props;
   const classes = useStyles();
   return (
     <div className={classes.groupCardOptions}>
-      <CardOption icon={<IoEye />} title="Show Members" />
+      <CardOption
+        icon={<IoEye />}
+        title="Show Members"
+        onClick={setShowMembers}
+      />
       <CardOption icon={<IoPencil />} title="Edit Title" />
     </div>
   );
 };
 
-GroupCardOptions.propTypes = {};
+GroupCardOptions.propTypes = {
+  setShowMembers: PropTypes.func,
+};
 
 export default GroupCardOptions;
