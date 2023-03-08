@@ -7,6 +7,7 @@ NEW
     - added logic to populate menu and message board with dummy data while I build the UI
     - created custom slider to select direct messages and private group chats
     - created PopOver component to hold the GroupCardOptions menu
+        - set logic to allow CardOption to toggle between two states to hide and show the members
 
 2-24-23
 -------
