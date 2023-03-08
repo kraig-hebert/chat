@@ -1,6 +1,12 @@
-3-6-23
+3-7-23
 -------
-
+NEW
+***
+*Direct-Messages
+    - set up layout for menu and messge board components
+    - added logic to populate menu and message board with dummy data while I build the UI
+    - created custom slider to select direct messages and private group chats
+    - created PopOver component to hold the GroupCardOptions menu
 
 2-24-23
 -------
