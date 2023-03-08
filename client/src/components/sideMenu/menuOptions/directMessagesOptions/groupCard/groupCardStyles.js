@@ -7,7 +7,7 @@ export const useStyles = createUseStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '80%',
+    width: '90%',
     marginBottom: '20px',
     padding: '0 5px',
     backgroundColor: theme.tertiary.main,
