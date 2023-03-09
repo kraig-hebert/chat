@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoPencil, IoEye, IoEyeOutline, IoPersonAdd } from 'react-icons/io5';
+import {
+  IoPricetags,
+  IoEye,
+  IoEyeOff,
+  IoOptions,
+  IoPersonAdd,
+} from 'react-icons/io5';
 
 import { useStyles } from './groupCardOptionsStyles';
 import CardOption from './cardOption/CardOption';
