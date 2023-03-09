@@ -27,6 +27,7 @@ const CurtainSlider = (props) => {
           className={classes.icon}
           onClick={handleIconClick}
         />
+        CurtainSlider
       </div>
     </div>
   );
