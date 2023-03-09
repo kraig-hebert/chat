@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   IoPricetags,
@@ -8,12 +9,18 @@ import {
   IoPersonAdd,
 } from 'react-icons/io5';
 
+import { groupCardSettingsSelected } from '../../../../../../reducers/appSettings';
 import { useStyles } from './groupCardOptionsStyles';
 import CardOption from './cardOption/CardOption';
 
 const GroupCardOptions = (props) => {
   const { setShowMembers } = props;
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const handleGroupSettingsClick = () =>
+    dispatch(groupCardSettingsSelected(true));
+
   return (
     <div className={classes.groupCardOptions}>
       <CardOption
@@ -26,7 +33,11 @@ const GroupCardOptions = (props) => {
       />
       <CardOption icon={<IoPricetags />} title="Edit Title" />
       <CardOption icon={<IoPersonAdd />} title="Send Invite" />
-      <CardOption icon={<IoOptions />} title="Group Settings" />
+      <CardOption
+        icon={<IoOptions />}
+        title="Group Settings"
+        onClick={handleGroupSettingsClick}
+      />
     </div>
   );
 };

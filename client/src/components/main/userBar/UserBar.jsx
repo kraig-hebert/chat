@@ -9,6 +9,7 @@ import {
 } from 'react-icons/io5';
 
 import ActionIcon from './actionIcon/ActionIcon';
+import CurtainSlider from '../curtainSlider/CurtainSlider';
 import { useStyles } from './userBarStyles';
 
 const UserBar = (props) => {
@@ -31,6 +32,7 @@ const UserBar = (props) => {
           hoverIcon={<IoExit className={classes.actionIcon} />}
         />
       </div>
+      <CurtainSlider />
     </div>
   );
 };
