@@ -18,8 +18,7 @@ const GroupCardOptions = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const handleGroupSettingsClick = () =>
-    dispatch(groupCardSettingsSelected(true));
+  const handleGroupSettingsClick = () => dispatch(groupCardSettingsSelected());
 
   return (
     <div className={classes.groupCardOptions}>

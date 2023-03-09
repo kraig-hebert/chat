@@ -13,6 +13,9 @@ const appSettings = createSlice({
   name: 'appSettings',
   initialState,
   reducers: {
+    curtainSliderClosed(state) {
+      state.curtainSlider.isOpen = false;
+    },
     directMessageThreadSelected(state, action) {
       const userName = action.payload;
       state.activeDirectMessageThread = userName;
@@ -37,6 +40,7 @@ export const selectCurtainSliderComponent = (state) =>
   state.appSettings.curtainSlider.component;
 
 export const {
+  curtainSliderClosed,
   directMessageThreadSelected,
   groupCardSettingsSelected,
   menuIconSelected,
