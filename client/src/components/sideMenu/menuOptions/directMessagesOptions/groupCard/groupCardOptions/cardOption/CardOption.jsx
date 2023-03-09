@@ -7,7 +7,6 @@ const CardOption = (props) => {
   const { icon, swapIcon, title, swapTitle, onClick, swappable } = props;
   const classes = useStyles();
   const [isSwapped, setIsSwapped] = useState(false);
-  console.log(isSwapped);
 
   const setOption = () => {
     if (!isSwapped) {
