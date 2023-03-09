@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoPencil, IoEye, IoEyeOff, IoPersonAdd } from 'react-icons/io5';
+import { IoPencil, IoEye, IoEyeOutline, IoPersonAdd } from 'react-icons/io5';
 
 import { useStyles } from './groupCardOptionsStyles';
 import CardOption from './cardOption/CardOption';
@@ -16,10 +16,11 @@ const GroupCardOptions = (props) => {
         title="Show Members"
         swapTitle="Hide Members"
         onClick={setShowMembers}
-        swappable={true}
+        swappable
       />
-      <CardOption icon={<IoPencil />} title="Edit Title" />
+      <CardOption icon={<IoPricetags />} title="Edit Title" />
       <CardOption icon={<IoPersonAdd />} title="Send Invite" />
+      <CardOption icon={<IoOptions />} title="Group Settings" />
     </div>
   );
 };
