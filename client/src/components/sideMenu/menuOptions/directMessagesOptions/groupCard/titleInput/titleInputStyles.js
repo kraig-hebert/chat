@@ -11,13 +11,18 @@ export const useStyles = createUseStyles((theme) => ({
   titleInput: (props) => ({
     width: '125px',
     height: props.groupInfoHeight,
-    paddingLeft: '5px',
     borderRadius: '5px',
     transition: 'width .25s',
-    backgroundColor: 'yellow',
+    backgroundColor: 'transparent',
     border: 'none',
+    cursor: 'text',
+    color: theme.mainBG.main,
+    caretColor: theme.light.main,
+    fontSize: '1rem',
+    fontWeight: '700',
+    pointerEvents: props.inputIsFocused ? 'all' : 'none',
     '&:active, &:focus': {
-      outline: `2px solid ${theme.blue.main}`,
+      outline: 'none',
     },
   }),
   icon: {

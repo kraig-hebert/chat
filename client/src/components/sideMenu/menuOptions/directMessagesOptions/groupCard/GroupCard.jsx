@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
@@ -21,7 +21,6 @@ import TitleInput from './titleInput/TitleInput';
 const GroupCard = (props) => {
   const { cardData } = props;
   const dispatch = useDispatch();
-  const groupInfoRef = useRef(null);
   const activeDirectMessageThread = useSelector(
     selectActiveDirectMessageThread
   );
@@ -32,14 +31,9 @@ const GroupCard = (props) => {
 
   const [showPopOver, setShowPopOver] = useState(false);
   const [showMembers, setShowMembers] = useState(false);
-  const [titleInputVisible, setTitleInputVisible] = useState(true);
-  const [groupInfoHeight, setGroupInfoHeight] = useState();
+  const [inputIsFocused, setInputIsFocused] = useState(false);
 
   const handleOptionsClick = () => setShowPopOver(true);
-
-  useLayoutEffect(() => {
-    setGroupInfoHeight(groupInfoRef.current.offsetHeight);
-  });
 
   return (
     <div
@@ -49,15 +43,14 @@ const GroupCard = (props) => {
           : classes.groupCard
       }
     >
-      <div className={classes.groupInfoContainer} ref={groupInfoRef}>
+      <div className={classes.groupInfoContainer}>
         <div className={classes.groupInfo} onClick={handleCardClick}>
           <IoPeopleCircle className={classes.groupIcon} />
           <div className={classes.groupTitleContainer}>
             <p className={classes.groupTitle}>{cardData.group.title}</p>
             <TitleInput
-              titleInputVisible={titleInputVisible}
-              setTitleInputVisible={setTitleInputVisible}
-              groupInfoHeight={groupInfoHeight}
+              inputIsFocused={inputIsFocused}
+              setInputIsFocused={setInputIsFocused}
             />
           </div>
         </div>
@@ -70,7 +63,13 @@ const GroupCard = (props) => {
       <PopOver
         showPopOver={showPopOver}
         setShowPopOver={setShowPopOver}
-        children={<GroupCardOptions setShowMembers={setShowMembers} />}
+        children={
+          <GroupCardOptions
+            setShowMembers={setShowMembers}
+            inputIsFocused={inputIsFocused}
+            setInputIsFocused={setInputIsFocused}
+          />
+        }
       />
     </div>
   );

@@ -41,6 +41,7 @@ export const useStyles = createUseStyles((theme) => ({
   },
   groupTitle: {
     color: theme.mainBG.main,
+    fontSize: '1rem',
     fontWeight: '700',
   },
   optionsIcon: {

@@ -14,11 +14,12 @@ import { useStyles } from './groupCardOptionsStyles';
 import CardOption from './cardOption/CardOption';
 
 const GroupCardOptions = (props) => {
-  const { setShowMembers } = props;
+  const { setShowMembers, inputFocused, setInputIsFocused } = props;
   const classes = useStyles();
   const dispatch = useDispatch();
 
   const handleGroupSettingsClick = () => dispatch(groupCardSettingsSelected());
+  const handleEditTitleClick = () => setInputIsFocused(true);
 
   return (
     <div className={classes.groupCardOptions}>
@@ -30,7 +31,11 @@ const GroupCardOptions = (props) => {
         onClick={setShowMembers}
         swappable
       />
-      <CardOption icon={<IoPricetags />} title="Edit Title" />
+      <CardOption
+        icon={<IoPricetags />}
+        title="Edit Title"
+        onClick={handleEditTitleClick}
+      />
       <CardOption icon={<IoPersonAdd />} title="Send Invite" />
       <CardOption
         icon={<IoOptions />}
@@ -43,6 +48,8 @@ const GroupCardOptions = (props) => {
 
 GroupCardOptions.propTypes = {
   setShowMembers: PropTypes.func,
+  inputIsFocused: PropTypes.bool,
+  setInputIsFocused: PropTypes.func,
 };
 
 export default GroupCardOptions;
