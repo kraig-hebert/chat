@@ -34,11 +34,12 @@ const GroupCard = (props) => {
   const [showMembers, setShowMembers] = useState(false);
   const [titleInputVisible, setTitleInputVisible] = useState(true);
   const [groupInfoHeight, setGroupInfoHeight] = useState();
+
   const handleOptionsClick = () => setShowPopOver(true);
 
   useLayoutEffect(() => {
     setGroupInfoHeight(groupInfoRef.current.offsetHeight);
-  }, [setGroupInfoHeight]);
+  });
 
   return (
     <div
@@ -48,15 +49,17 @@ const GroupCard = (props) => {
           : classes.groupCard
       }
     >
-      <TitleInput
-        titleInputVisible={titleInputVisible}
-        setTitleInputVisible={setTitleInputVisible}
-        groupInfoHeight={groupInfoHeight}
-      />
       <div className={classes.groupInfoContainer} ref={groupInfoRef}>
         <div className={classes.groupInfo} onClick={handleCardClick}>
           <IoPeopleCircle className={classes.groupIcon} />
-          <p className={classes.groupTitle}>{cardData.group.title}</p>
+          <div className={classes.groupTitleContainer}>
+            <p className={classes.groupTitle}>{cardData.group.title}</p>
+            <TitleInput
+              titleInputVisible={titleInputVisible}
+              setTitleInputVisible={setTitleInputVisible}
+              groupInfoHeight={groupInfoHeight}
+            />
+          </div>
         </div>
         <IoEllipsisVertical
           className={classes.optionsIcon}

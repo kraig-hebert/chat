@@ -36,6 +36,9 @@ export const useStyles = createUseStyles((theme) => ({
     fontSize: '2.75rem',
     margin: '0 10px',
   },
+  groupTitleContainer: {
+    position: 'relative',
+  },
   groupTitle: {
     color: theme.mainBG.main,
     fontWeight: '700',

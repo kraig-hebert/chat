@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { IoCheckmarkCircle } from 'react-icons/io5';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './titleInputStyles';
@@ -10,13 +11,19 @@ const TitleInput = (props) => {
     else return { width: '0px', groupInfoHeight };
   };
   const classes = useStyles(setStyles());
-  return <input type="text" className={classes.titleInput} />;
+
+  return (
+    <div className={classes.titleInputContainer}>
+      <input type="text" className={classes.titleInput} />
+      <IoCheckmarkCircle className={classes.icon} />
+    </div>
+  );
 };
 
 TitleInput.propTypes = {
   titleInputVisible: PropTypes.bool,
   setTitleInputVisible: PropTypes.func,
-  groupInfoHeight: PropTypes.number,
+  groupInfoHeight: PropTypes.object,
 };
 
 export default TitleInput;

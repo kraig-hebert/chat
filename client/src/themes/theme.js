@@ -11,6 +11,9 @@ export const theme = {
   blue: {
     main: 'rgb(65,131,196)',
   },
+  success: {
+    main: 'rgb(75,181,67)',
+  },
   dark: {
     main: 'rgb(0,0,0)',
     threeQuarterAlpha: 'rgba(0,0,0,.75)',
