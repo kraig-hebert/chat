@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
@@ -31,9 +31,16 @@ const GroupCard = (props) => {
 
   const [showPopOver, setShowPopOver] = useState(false);
   const [showMembers, setShowMembers] = useState(false);
+  const [groupInfoHeight, setGroupInfoHeight] = useState();
+  const groupInfoRef = useRef(null);
   const [inputIsFocused, setInputIsFocused] = useState(false);
+  const [titleInputValue, setTitleInputValue] = useState(cardData.group.title);
 
   const handleOptionsClick = () => setShowPopOver(true);
+
+  useLayoutEffect(() => {
+    setGroupInfoHeight(groupInfoRef.current.offsetHeight);
+  });
 
   return (
     <div
@@ -43,14 +50,16 @@ const GroupCard = (props) => {
           : classes.groupCard
       }
     >
-      <div className={classes.groupInfoContainer}>
+      <div className={classes.groupInfoContainer} ref={groupInfoRef}>
         <div className={classes.groupInfo} onClick={handleCardClick}>
           <IoPeopleCircle className={classes.groupIcon} />
           <div className={classes.groupTitleContainer}>
-            <p className={classes.groupTitle}>{cardData.group.title}</p>
             <TitleInput
+              groupInfoHeight={groupInfoHeight}
               inputIsFocused={inputIsFocused}
               setInputIsFocused={setInputIsFocused}
+              titleInputValue={titleInputValue}
+              setTitleInputValue={setTitleInputValue}
             />
           </div>
         </div>

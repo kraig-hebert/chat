@@ -32,4 +32,12 @@ export const useStyles = createUseStyles((theme) => ({
     color: theme.success.main,
     cursor: 'pointer',
   },
+  bottomBorder: (props) => ({
+    position: 'absolute',
+    bottom: '10px',
+    width: props.inputIsFocused ? '100%' : '0',
+    height: '2px',
+    backgroundColor: theme.mainBG.main,
+    transition: 'width .25s',
+  }),
 }));
