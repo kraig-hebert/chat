@@ -2,6 +2,7 @@ import React, { useRef, useEffect, forwardRef, useState } from 'react';
 import { IoCheckmarkCircle, IoCloseCircle } from 'react-icons/io5';
 import PropTypes from 'prop-types';
 
+import useClickBlocking from '../../../../../../hooks/useClickBlocking';
 import { useStyles } from './titleInputStyles';
 
 const TitleInput = (props) => {
@@ -12,17 +13,20 @@ const TitleInput = (props) => {
     titleInputValue,
     setTitleInputValue,
   } = props;
-  const classes = useStyles({
-    groupInfoHeight,
-    inputIsFocused,
-  });
 
   const containerRef = useRef(null);
   const inputRef = useRef(null);
   const closeIconRef = useRef(null);
   const checkIconRef = useRef(null);
 
-  const initialValueRef = useRef(titleInputValue);
+  const [initialValue, setInitialValue] = useState(titleInputValue);
+
+  useClickBlocking(containerRef, inputRef, inputIsFocused);
+
+  const classes = useStyles({
+    groupInfoHeight,
+    inputIsFocused,
+  });
 
   const handleClearClick = () => {
     setTitleInputValue('');
@@ -30,13 +34,13 @@ const TitleInput = (props) => {
   };
 
   const handleCancelIconClick = () => {
-    setTitleInputValue(initialValueRef.current);
+    setTitleInputValue(initialValue);
     setInputIsFocused(false);
   };
-  const handleCheckIconClick = () => setInputIsFocused(false);
-  function handleScreenClick(event) {
-    if (!containerRef.current.contains(event.target)) inputRef.current.focus();
-  }
+  const handleCheckIconClick = () => {
+    setInputIsFocused(false);
+    setInitialValue(titleInputValue);
+  };
 
   const Icon = forwardRef((props, ref) => {
     return (
@@ -47,11 +51,7 @@ const TitleInput = (props) => {
   });
 
   useEffect(() => {
-    if (inputIsFocused) {
-      inputRef.current.focus();
-      document.addEventListener('click', handleScreenClick);
-    } else document.removeEventListener('click', handleScreenClick);
-    return () => document.removeEventListener('click', handleScreenClick);
+    if (inputIsFocused) inputRef.current.focus();
   }, [inputIsFocused]);
 
   return (
