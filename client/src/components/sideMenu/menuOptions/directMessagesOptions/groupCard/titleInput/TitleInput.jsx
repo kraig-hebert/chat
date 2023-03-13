@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import { IoCheckmarkCircle } from 'react-icons/io5';
+import React, { useRef, useEffect, forwardRef, useState } from 'react';
+import { IoCheckmarkCircle, IoCloseCircle } from 'react-icons/io5';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './titleInputStyles';
@@ -17,25 +17,75 @@ const TitleInput = (props) => {
     inputIsFocused,
   });
 
+  const containerRef = useRef(null);
   const inputRef = useRef(null);
+  const closeIconRef = useRef(null);
+  const checkIconRef = useRef(null);
 
-  const handleBlur = () => setInputIsFocused(false);
+  const initialValueRef = useRef(titleInputValue);
+
+  const handleClearClick = () => {
+    setTitleInputValue('');
+    inputRef.current.focus();
+  };
+
+  const handleCancelIconClick = () => {
+    setTitleInputValue(initialValueRef.current);
+    setInputIsFocused(false);
+  };
+  const handleCheckIconClick = () => setInputIsFocused(false);
+  function handleScreenClick(event) {
+    if (!containerRef.current.contains(event.target)) inputRef.current.focus();
+  }
+
+  const Icon = forwardRef((props, ref) => {
+    return (
+      <div className={props.className} ref={ref} onClick={props.onClick}>
+        {props.children}
+      </div>
+    );
+  });
+
   useEffect(() => {
-    if (inputIsFocused) inputRef.current.focus();
+    if (inputIsFocused) {
+      inputRef.current.focus();
+      document.addEventListener('click', handleScreenClick);
+    } else document.removeEventListener('click', handleScreenClick);
+    return () => document.removeEventListener('click', handleScreenClick);
   }, [inputIsFocused]);
 
   return (
-    <div className={classes.titleInputContainer}>
+    <div className={classes.titleInputContainer} ref={containerRef}>
+      <div className={classes.iconsContainer}>
+        <Icon
+          children={
+            <IoCloseCircle
+              className={classes.cancelIcon}
+              onClick={handleCancelIconClick}
+            />
+          }
+          ref={closeIconRef}
+        />
+        <Icon
+          children={
+            <IoCheckmarkCircle
+              className={classes.successIcon}
+              onClick={handleCheckIconClick}
+            />
+          }
+          ref={checkIconRef}
+        />
+      </div>
       <input
         type="text"
         className={classes.titleInput}
-        onBlur={handleBlur}
         value={titleInputValue}
         onChange={(e) => setTitleInputValue(e.target.value)}
         ref={inputRef}
       />
-      <IoCheckmarkCircle className={classes.icon} />
-      <div className={classes.bottomBorder}></div>
+      <div className={classes.bottomBorder}>
+        <p onClick={handleClearClick}>clear</p>
+      </div>
     </div>
   );
 };

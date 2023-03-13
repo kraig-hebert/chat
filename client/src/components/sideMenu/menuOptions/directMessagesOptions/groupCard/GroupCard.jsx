@@ -53,15 +53,13 @@ const GroupCard = (props) => {
       <div className={classes.groupInfoContainer} ref={groupInfoRef}>
         <div className={classes.groupInfo} onClick={handleCardClick}>
           <IoPeopleCircle className={classes.groupIcon} />
-          <div className={classes.groupTitleContainer}>
-            <TitleInput
-              groupInfoHeight={groupInfoHeight}
-              inputIsFocused={inputIsFocused}
-              setInputIsFocused={setInputIsFocused}
-              titleInputValue={titleInputValue}
-              setTitleInputValue={setTitleInputValue}
-            />
-          </div>
+          <TitleInput
+            groupInfoHeight={groupInfoHeight}
+            inputIsFocused={inputIsFocused}
+            setInputIsFocused={setInputIsFocused}
+            titleInputValue={titleInputValue}
+            setTitleInputValue={setTitleInputValue}
+          />
         </div>
         <IoEllipsisVertical
           className={classes.optionsIcon}

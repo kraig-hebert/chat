@@ -13,6 +13,10 @@ export const theme = {
   },
   success: {
     main: 'rgb(75,181,67)',
+    darker: 'rgb(37,112,33)',
+  },
+  red: {
+    main: 'rgb(184, 24, 24)',
   },
   dark: {
     main: 'rgb(0,0,0)',
