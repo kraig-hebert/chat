@@ -25,8 +25,9 @@ export const useStyles = createUseStyles((theme) => ({
   iconsContainer: (props) => ({
     position: 'absolute',
     right: props.inputIsFocused ? '5px' : '-50px',
-    top: '5px',
+    top: '2px',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignContent: 'center',
     cursor: 'pointer',
@@ -45,6 +46,10 @@ export const useStyles = createUseStyles((theme) => ({
   cancelIcon: {
     extend: 'icon',
     color: theme.red.main,
+  },
+  disabledIcon: {
+    extend: 'icon',
+    display: 'none',
   },
   bottomBorder: (props) => ({
     position: 'absolute',

@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, forwardRef, useState } from 'react';
 import { IoSave, IoCloseCircle } from 'react-icons/io5';
+import { RiSave3Fill } from 'react-icons/ri';
 import PropTypes from 'prop-types';
 
 import useClickBlocking from '../../../../../../hooks/useClickBlocking';
@@ -69,7 +70,11 @@ const TitleInput = (props) => {
         <Icon
           children={
             <IoSave
-              className={classes.successIcon}
+              className={
+                titleInputValue !== ''
+                  ? classes.successIcon
+                  : classes.disabledIcon
+              }
               onClick={handleSaveIconClick}
             />
           }
