@@ -36,11 +36,14 @@ export const useStyles = createUseStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
+    fontSize: '.8rem',
   },
   successIcon: {
+    extend: 'icon',
     color: theme.success.darker,
   },
   cancelIcon: {
+    extend: 'icon',
     color: theme.red.main,
   },
   bottomBorder: (props) => ({

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, forwardRef, useState } from 'react';
-import { IoCheckmarkCircle, IoCloseCircle } from 'react-icons/io5';
+import { IoSave, IoCloseCircle } from 'react-icons/io5';
 import PropTypes from 'prop-types';
 
 import useClickBlocking from '../../../../../../hooks/useClickBlocking';
@@ -37,7 +37,7 @@ const TitleInput = (props) => {
     setTitleInputValue(initialValue);
     setInputIsFocused(false);
   };
-  const handleCheckIconClick = () => {
+  const handleSaveIconClick = () => {
     setInputIsFocused(false);
     setInitialValue(titleInputValue);
   };
@@ -68,9 +68,9 @@ const TitleInput = (props) => {
         />
         <Icon
           children={
-            <IoCheckmarkCircle
+            <IoSave
               className={classes.successIcon}
-              onClick={handleCheckIconClick}
+              onClick={handleSaveIconClick}
             />
           }
           ref={checkIconRef}
