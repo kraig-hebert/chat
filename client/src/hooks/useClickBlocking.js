@@ -14,7 +14,7 @@ function useClickBlocking(blockingRef, inputRef, inputIsFocused) {
     return () => {
       document.removeEventListener('click', handleClick, true);
     };
-  }, [blockingRef, inputIsFocused]);
+  }, [blockingRef, inputRef, inputIsFocused]);
 }
 
 export default useClickBlocking;
