@@ -1,11 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import {
-  IoPeopleCircle,
-  IoEllipsisVertical,
-  IoEllipsisVerticalOutline,
-} from 'react-icons/io5';
+import { IoPeopleCircle, IoEllipsisVerticalCircle } from 'react-icons/io5';
 
 import {
   directMessageThreadSelected,
@@ -61,7 +57,7 @@ const GroupCard = (props) => {
             setTitleInputValue={setTitleInputValue}
           />
         </div>
-        <IoEllipsisVertical
+        <IoEllipsisVerticalCircle
           className={classes.optionsIcon}
           onClick={handleOptionsClick}
         />

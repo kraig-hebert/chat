@@ -6,7 +6,7 @@ export const useStyles = createUseStyles((theme) => ({
     overflow: 'hidden',
   }),
   titleInput: (props) => ({
-    width: '125px',
+    width: '130px',
     height: props.groupInfoHeight,
     borderRadius: '5px',
     border: 'none',
@@ -57,13 +57,22 @@ export const useStyles = createUseStyles((theme) => ({
     height: '2px',
     backgroundColor: theme.mainBG.main,
     transition: 'width .35s',
+  }),
+  wordsContainer: {
+    position: 'absolute',
+    gap: '5px',
+    right: '5px',
+    top: '2px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     '& p': {
-      position: 'absolute',
-      right: '5px',
-      top: '2px',
       fontSize: '.6rem',
       color: theme.light.main,
       cursor: 'pointer',
+      '&:hover': {
+        color: theme.mainBG.main,
+      },
     },
-  }),
+  },
 }));

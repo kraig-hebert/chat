@@ -13,6 +13,10 @@ export const useStyles = createUseStyles((theme) => ({
     backgroundColor: theme.tertiary.main,
     borderRadius: '5px',
   },
+  activeGroupCard: {
+    extend: 'groupCard',
+    backgroundColor: theme.blue.main,
+  },
   groupInfoContainer: {
     display: 'flex',
     display: 'flex',
@@ -27,22 +31,13 @@ export const useStyles = createUseStyles((theme) => ({
     width: '100%',
     cursor: 'pointer',
   },
-  activeGroupCard: {
-    extend: 'groupCard',
-    backgroundColor: theme.blue.main,
-  },
   groupIcon: {
     color: theme.mainBG.main,
     fontSize: '2.75rem',
-    margin: '0 10px',
-  },
-  groupTitle: {
-    color: theme.mainBG.main,
-    fontSize: '1rem',
-    fontWeight: '700',
+    margin: '0 5px',
   },
   optionsIcon: {
-    fontSize: '1.5rem',
+    fontSize: '2rem',
     color: theme.mainBG.main,
     cursor: 'pointer',
   },

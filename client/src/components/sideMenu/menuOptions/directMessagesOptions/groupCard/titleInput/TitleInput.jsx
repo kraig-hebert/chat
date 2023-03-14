@@ -31,6 +31,10 @@ const TitleInput = (props) => {
 
   const handleClearClick = () => {
     setTitleInputValue('');
+  };
+
+  const handleResetClick = () => {
+    setTitleInputValue(initialValue);
     inputRef.current.focus();
   };
 
@@ -38,6 +42,7 @@ const TitleInput = (props) => {
     setTitleInputValue(initialValue);
     setInputIsFocused(false);
   };
+
   const handleSaveIconClick = () => {
     setInputIsFocused(false);
     setInitialValue(titleInputValue);
@@ -89,7 +94,10 @@ const TitleInput = (props) => {
         ref={inputRef}
       />
       <div className={classes.bottomBorder}>
-        <p onClick={handleClearClick}>clear</p>
+        <div className={classes.wordsContainer}>
+          <p onClick={handleClearClick}>clear</p>
+          <p onClick={handleResetClick}>reset</p>
+        </div>
       </div>
     </div>
   );
