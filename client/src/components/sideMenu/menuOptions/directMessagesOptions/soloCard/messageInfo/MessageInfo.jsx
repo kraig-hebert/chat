@@ -10,7 +10,7 @@ const MessageInfo = (props) => {
 
   return (
     <div className={classes.messageInfo}>
-      <p>{cardData.user}</p>
+      <p>{cardData.user.username}</p>
       <p>
         <span>Last Message: </span>
         {format(new Date(cardData.date), 'eee hh:mm:ss aaa')}

@@ -1,12 +1,52 @@
 export const users = [
-  'XjsmithX',
-  'cluelessWonderman',
-  'MontySnek',
-  'HomerSimp',
-  'theDRUMF',
-  'Da-Mayne-Qwayne',
-  'LIGERwoods',
-  'dark.brandon',
+  {
+    username: 'XjsmithX',
+    firstName: 'Jacob',
+    lastName: 'Smith',
+    friendStatus: 'friend',
+  },
+  {
+    username: 'cluelessWonderman',
+    firstName: 'Guy',
+    lastName: 'Gadot',
+    friendStatus: 'friend',
+  },
+  {
+    username: 'MontySnek',
+    firstName: 'Hillary',
+    lastName: 'Martin',
+    friendStatus: 'pending',
+  },
+  {
+    username: 'HomerSimp',
+    firstName: 'Marcus',
+    lastName: 'Roberts',
+    friendStatus: 'pending',
+  },
+  {
+    username: 'theDRUMF',
+    firstName: 'Donald',
+    lastName: 'Trump',
+    friendStatus: 'blocked',
+  },
+  {
+    username: 'Da-Mayne-Qwayne',
+    firstName: 'Ashley',
+    lastName: 'Perkins',
+    friendStatus: 'friend',
+  },
+  {
+    username: 'LIGERwoods',
+    firstName: 'Tim',
+    lastName: 'Miller',
+    friendStatus: 'friend',
+  },
+  {
+    username: 'dark.brandon',
+    firstName: 'Joe',
+    lastName: 'Biden',
+    friendStatus: 'blocked',
+  },
 ];
 
 export const groups = [

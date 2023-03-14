@@ -17,7 +17,7 @@ const DirectMessagesOptions = (props) => {
   const renderCards = () => {
     if (selectedType === 'solo') {
       return users
-        .filter((user) => user.startsWith(inputValue))
+        .filter((user) => user.username.startsWith(inputValue))
         .map((user, index) => {
           const data = {
             type: 'solo',

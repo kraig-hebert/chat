@@ -7,7 +7,6 @@ import { useStyles } from './messageBoardStyles';
 import MessageBlock from './messageBlock/MessageBlock';
 
 //import dummyData for messageDisplay
-import { users } from '../../../../../data/dummyData';
 import { addSeconds } from 'date-fns';
 const now = new Date();
 
@@ -18,12 +17,11 @@ const MessageBoard = (props) => {
   const activeDirectMessageThread = useSelector(
     selectActiveDirectMessageThread
   );
-  const indexOfActiveMessagethread = users.indexOf(activeDirectMessageThread);
 
   const isEven = (number) => number % 2 === 0;
   const setUser = (i) => {
     if (isEven(i)) {
-      return users[indexOfActiveMessagethread];
+      return activeDirectMessageThread;
     } else return 'khebert24';
   };
 

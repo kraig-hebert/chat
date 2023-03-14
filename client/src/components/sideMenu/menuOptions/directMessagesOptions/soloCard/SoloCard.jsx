@@ -20,12 +20,12 @@ const SoloCard = (props) => {
   const classes = useStyles();
 
   const handleCardClick = () =>
-    dispatch(directMessageThreadSelected(cardData.user));
+    dispatch(directMessageThreadSelected(cardData.user.username));
 
   return (
     <div
       className={
-        cardData.user === activeDirectMessageThread
+        cardData.user.username === activeDirectMessageThread
           ? classes.activeSoloCard
           : classes.soloCard
       }
