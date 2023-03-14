@@ -18,6 +18,7 @@ const TextInput = (props) => {
   } = props;
   const classes = useStyles({ width, height, backgroundColor, textColor });
   const [isFocused, setIsFocused] = useState(false);
+  const inputContainerRef = useRef(null);
   const inputRef = useRef(null);
 
   let customIcon;
@@ -26,11 +27,14 @@ const TextInput = (props) => {
     else customIcon = <Icon className={classes.icon} />;
   }
 
-  const handleClearClick = () => setInputValue('');
+  const handleClearClick = () => {
+    inputRef.current.focus();
+    setInputValue('');
+  };
 
   useEffect(() => {
     function handleClick(event) {
-      if (inputRef.current && !inputRef.current.contains(event.target))
+      if (inputRef.current && !inputContainerRef.current.contains(event.target))
         setIsFocused(false);
     }
     if (isFocused) document.addEventListener('click', handleClick);
@@ -40,7 +44,7 @@ const TextInput = (props) => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.textInputContainer} ref={inputRef}>
+      <div className={classes.textInputContainer} ref={inputContainerRef}>
         {customIcon}
         <IoBackspace className={classes.clearIcon} onClick={handleClearClick} />
         <input
@@ -49,6 +53,7 @@ const TextInput = (props) => {
           value={inputValue}
           onFocus={() => setIsFocused(true)}
           onChange={(e) => setInputValue(e.target.value)}
+          ref={inputRef}
         />
         {!inputValue && (
           <span className={classes.inputPlaceholder}>{placeholder}...</span>
