@@ -8,8 +8,8 @@ export const useStyles = createUseStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     width: '90%',
-    marginBottom: '20px',
     padding: '0 5px',
+    marginBottom: '20px',
     backgroundColor: theme.tertiary.main,
     borderRadius: '5px',
   },
@@ -37,7 +37,7 @@ export const useStyles = createUseStyles((theme) => ({
     margin: '0 5px',
   },
   optionsIcon: {
-    fontSize: '2rem',
+    fontSize: '1.8rem',
     color: theme.mainBG.main,
     cursor: 'pointer',
   },

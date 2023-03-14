@@ -13,6 +13,7 @@ import MemberList from './memberList/MemberList';
 import PopOver from '../../../../common/popOver/PopOver';
 import GroupCardOptions from './groupCardOptions/GroupCardOptions';
 import TitleInput from './titleInput/TitleInput';
+import Badge from '../../../../common/badge/Badge';
 
 const GroupCard = (props) => {
   const { cardData } = props;
@@ -63,6 +64,7 @@ const GroupCard = (props) => {
         />
       </div>
       {showMembers && <MemberList members={cardData.group.members} />}
+      <Badge badgeCount={cardData.group.unread} />
       <PopOver
         showPopOver={showPopOver}
         setShowPopOver={setShowPopOver}

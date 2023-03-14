@@ -3,7 +3,7 @@ export const theme = {
     main: 'rgb(45,45,51)',
   },
   secondary: {
-    main: 'rgba(102,102,110,.8)',
+    main: 'rgba(102,102,110)',
   },
   tertiary: {
     main: 'rgb(153,153,153)',
