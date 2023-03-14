@@ -9,7 +9,6 @@ export const useStyles = createUseStyles((theme) => ({
     width: '125px',
     height: props.groupInfoHeight,
     borderRadius: '5px',
-    transition: 'width .25s',
     border: 'none',
     cursor: 'text',
     color: theme.mainBG.main,
@@ -31,7 +30,7 @@ export const useStyles = createUseStyles((theme) => ({
     justifyContent: 'center',
     alignContent: 'center',
     cursor: 'pointer',
-    transition: 'right .25s',
+    transition: 'right .35s',
   }),
   icon: {
     display: 'flex',
@@ -57,7 +56,7 @@ export const useStyles = createUseStyles((theme) => ({
     width: props.inputIsFocused ? '100%' : '0',
     height: '2px',
     backgroundColor: theme.mainBG.main,
-    transition: 'width .25s',
+    transition: 'width .35s',
     '& p': {
       position: 'absolute',
       right: '5px',
