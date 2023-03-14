@@ -1,3 +1,15 @@
+3-13-23
+-------
+ADD-ONs
+***
+*Direct-Messages
+    - changed title on group card to be an input to allow update of title
+        - added extended functionality to input with close, reset, clear, and save icons
+        - created a useClickBlocking hook to force focuse on title input to force user to cancel edit or save before performing another action
+            - THIS CAN NOW BE USED TO FORCE ANY INPUT TO STAY FOCUSED UNTIL A CONDITION IS MET
+    - created useCloseOnClickAway hook to force the group options popover closed when the user clicks anthing outside the popover
+        - THIS CAN NOW BE USED WITH ANY COMPONENT THAT IS CONDITIONALLY RENDERED
+
 3-7-23
 -------
 NEW
