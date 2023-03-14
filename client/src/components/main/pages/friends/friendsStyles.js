@@ -8,6 +8,8 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     width: '100%',
     height: props.height,
+    padding: '2px 2px',
+    margin: '10px 0',
     overflow: 'hidden',
   }),
 }));

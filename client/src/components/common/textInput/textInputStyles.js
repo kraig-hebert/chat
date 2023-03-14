@@ -50,4 +50,13 @@ export const useStyles = createUseStyles((theme) => ({
     extend: 'icon',
     color: theme.blue.main,
   },
+  clearIcon: {
+    position: 'absolute',
+    right: '5px',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    color: theme.light.main,
+    fontSize: '1rem',
+    cursor: 'pointer',
+  },
 }));

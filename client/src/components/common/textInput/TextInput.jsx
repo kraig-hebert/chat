@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { IoBackspace } from 'react-icons/io5';
 
 import { useStyles } from './textInputStyles';
 
@@ -17,6 +18,7 @@ const TextInput = (props) => {
   } = props;
   const classes = useStyles({ width, height, backgroundColor, textColor });
   const [isFocused, setIsFocused] = useState(false);
+  const inputRef = useRef(null);
 
   let customIcon;
   if (Icon && FocusedIcon) {
@@ -24,15 +26,28 @@ const TextInput = (props) => {
     else customIcon = <Icon className={classes.icon} />;
   }
 
+  const handleClearClick = () => setInputValue('');
+
+  useEffect(() => {
+    function handleClick(event) {
+      if (inputRef.current && !inputRef.current.contains(event.target))
+        setIsFocused(false);
+    }
+    if (isFocused) document.addEventListener('click', handleClick);
+    else document.removeEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, [isFocused]);
+
   return (
     <div className={classes.container}>
-      <div className={classes.textInputContainer}>
+      <div className={classes.textInputContainer} ref={inputRef}>
         {customIcon}
+        <IoBackspace className={classes.clearIcon} onClick={handleClearClick} />
         <input
           type="text"
           className={classes.textInput}
+          value={inputValue}
           onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
           onChange={(e) => setInputValue(e.target.value)}
         />
         {!inputValue && (
