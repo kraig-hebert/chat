@@ -2,6 +2,7 @@ import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles((theme) => ({
   soloCard: {
+    position: 'relative',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',

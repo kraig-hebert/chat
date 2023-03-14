@@ -9,6 +9,7 @@ import {
 } from '../../../../../reducers/appSettings';
 import { useStyles } from './soloCardStyles';
 import MessageInfo from './messageInfo/MessageInfo';
+import Badge from '../../../../common/badge/Badge';
 
 const SoloCard = (props) => {
   const { cardData } = props;
@@ -32,6 +33,7 @@ const SoloCard = (props) => {
     >
       <IoPersonCircle className={classes.icon} />
       <MessageInfo cardData={cardData} />
+      <Badge badgeCount={Math.floor(Math.random() * 6)} />
     </div>
   );
 };
