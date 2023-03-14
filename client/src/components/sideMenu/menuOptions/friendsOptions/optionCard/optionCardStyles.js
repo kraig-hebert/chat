@@ -18,6 +18,10 @@ export const useStyles = createUseStyles((theme) => ({
       color: theme.mainBG.main,
     },
   },
+  activeCard: {
+    extend: 'optionCard',
+    backgroundColor: theme.blue.main,
+  },
   activeOptionCard: {
     extend: 'soloCard',
     backgroundColor: theme.blue.main,

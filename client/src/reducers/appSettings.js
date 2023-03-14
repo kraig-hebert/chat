@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   activeMenu: 'direct-messages',
   activeDirectMessageThread: 'XjsmithX',
+  activeFriendsOption: 'All',
   curtainSlider: {
     isOpen: false,
     component: '',
@@ -20,6 +21,10 @@ const appSettings = createSlice({
       const userName = action.payload;
       state.activeDirectMessageThread = userName;
     },
+    friendsOptionSelected(state, action) {
+      const option = action.payload;
+      state.activeFriendsOption = option;
+    },
     groupCardSettingsSelected(state) {
       state.curtainSlider.isOpen = true;
     },
@@ -33,6 +38,8 @@ const appSettings = createSlice({
 export const selectActiveMenu = (state) => state.appSettings.activeMenu;
 export const selectActiveDirectMessageThread = (state) =>
   state.appSettings.activeDirectMessageThread;
+export const selectActiveFriendsOption = (state) =>
+  state.appSettings.activeFriendsOption;
 
 export const selectCurtainSliderIsOpen = (state) =>
   state.appSettings.curtainSlider.isOpen;
@@ -42,6 +49,7 @@ export const selectCurtainSliderComponent = (state) =>
 export const {
   curtainSliderClosed,
   directMessageThreadSelected,
+  friendsOptionSelected,
   groupCardSettingsSelected,
   menuIconSelected,
 } = appSettings.actions;
