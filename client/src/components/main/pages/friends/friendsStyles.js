@@ -4,12 +4,11 @@ export const useStyles = createUseStyles((theme) => ({
   friends: (props) => ({
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     width: '100%',
     height: props.height,
-    padding: '2px 2px',
-    margin: '10px 0',
+    marginTop: '10px',
     overflow: 'hidden',
   }),
 }));

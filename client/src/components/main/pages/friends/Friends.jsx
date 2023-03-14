@@ -5,6 +5,7 @@ import { IoSearchCircleOutline, IoSearchCircle } from 'react-icons/io5';
 
 import { useStyles } from './friendsStyles';
 import TextInput from '../../../common/textInput/TextInput';
+import FriendsList from './friendsList/FriendsList';
 
 const Friends = (props) => {
   const { height } = props;
@@ -26,6 +27,7 @@ const Friends = (props) => {
         Icon={IoSearchCircleOutline}
         FocusedIcon={IoSearchCircle}
       />
+      <FriendsList />
     </div>
   );
 };
