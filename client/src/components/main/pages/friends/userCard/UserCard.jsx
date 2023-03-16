@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoPersonCircle } from 'react-icons/io5';
 
 import { useStyles } from './userCardStyles';
+import ProfilePic from './profilePic/ProfilePic';
 
 const UserCard = (props) => {
   const { user } = props;
   const classes = useStyles();
   return (
     <div className={classes.userCard}>
-      <IoPersonCircle className={classes.icon} />
+      <ProfilePic status={user.onlineStatus} />
       <div className={classes.userInfo}>
         <p>{user.username}</p>
         <p>{`${user.firstName} ${user.lastName}`}</p>

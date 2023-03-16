@@ -9,11 +9,6 @@ export const useStyles = createUseStyles((theme) => ({
     padding: '5px',
     borderBottom: `1px solid ${theme.tertiary.halfAlpha}`,
   },
-  icon: {
-    marginRight: '10px',
-    color: theme.tertiary.main,
-    fontSize: '2rem',
-  },
   userInfo: {
     display: 'flex',
     flexDirection: 'column',
