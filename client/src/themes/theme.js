@@ -7,6 +7,7 @@ export const theme = {
   },
   tertiary: {
     main: 'rgb(153,153,153)',
+    halfAlpha: 'rgba(153,153,153,.5)',
   },
   blue: {
     main: 'rgb(65,131,196)',

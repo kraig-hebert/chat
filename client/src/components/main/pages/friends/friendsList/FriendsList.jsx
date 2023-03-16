@@ -10,7 +10,7 @@ const FriendsList = (props) => {
   const classes = useStyles();
 
   const renderedUserCards = users.map((user, index) => (
-    <UserCard user={user} />
+    <UserCard user={user} key={index} />
   ));
   return <div className={classes.friendsList}>{renderedUserCards}</div>;
 };
