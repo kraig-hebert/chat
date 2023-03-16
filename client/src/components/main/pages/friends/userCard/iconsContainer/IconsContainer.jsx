@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { IoChatbox, IoEllipsisVertical } from 'react-icons/io5';
 
@@ -11,21 +11,22 @@ const IconsContainer = (props) => {
   const { username } = props;
   const classes = useStyles();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleMessageIconClick = () =>
+  const handleMessageIconClick = () => {
     dispatch(
       userCardDirectMessageIconSelected({
         username,
         activeMenu: 'direct-messages',
       })
     );
+    navigate('/direct-messages');
+  };
   const handleOptionsIconClick = () => {};
   return (
     <div className={classes.iconsContainer}>
       <div className={classes.iconContainer} onClick={handleMessageIconClick}>
-        <Link to={'/direct-messages'}>
-          <IoChatbox className={classes.icon} />
-        </Link>
+        <IoChatbox className={classes.icon} />
       </div>
       <div className={classes.iconContainer} onClick={handleOptionsIconClick}>
         <IoEllipsisVertical className={classes.icon} />
