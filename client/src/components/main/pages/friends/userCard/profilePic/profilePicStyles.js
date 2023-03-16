@@ -8,16 +8,17 @@ export const useStyles = createUseStyles((theme) => ({
   profilePic: {
     color: theme.tertiary.main,
     fontSize: '2.1rem',
+    margin: '2px',
   },
-  statusBadge: {
+  statusBadge: (props) => ({
     position: 'absolute',
-    top: '1px',
-    right: '1px',
-    width: '13px',
-    height: '13px',
-    backgroundColor: 'green',
+    top: '3px',
+    right: '3px',
+    width: '10px',
+    height: '10px',
+    backgroundColor: props.badgeColor,
     borderRadius: '50%',
-    border: `3px solid ${theme.mainBG.main}`,
+    outline: `3px solid ${theme.mainBG.main}`,
     display: 'block',
-  },
+  }),
 }));

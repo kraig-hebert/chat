@@ -4,7 +4,7 @@ export const users = [
     firstName: 'Jacob',
     lastName: 'Smith',
     friendStatus: 'friend',
-    onlineStatus: true,
+    onlineStatus: 'online',
   },
   {
     username: 'cluelessWonderman',
