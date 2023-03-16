@@ -32,6 +32,11 @@ const appSettings = createSlice({
       const activeMenu = action.payload;
       state.activeMenu = activeMenu;
     },
+    userCardDirectMessageIconSelected(state, action) {
+      const { username, activeMenu } = action.payload;
+      state.activeDirectMessageThread = username;
+      state.activeMenu = activeMenu;
+    },
   },
 });
 
@@ -52,6 +57,7 @@ export const {
   friendsOptionSelected,
   groupCardSettingsSelected,
   menuIconSelected,
+  userCardDirectMessageIconSelected,
 } = appSettings.actions;
 
 export default appSettings.reducer;

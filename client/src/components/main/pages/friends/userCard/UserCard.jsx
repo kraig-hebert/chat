@@ -17,7 +17,7 @@ const UserCard = (props) => {
           <p>{`${user.firstName} ${user.lastName}`}</p>
         </div>
       </div>
-      <IconsContainer />
+      <IconsContainer username-={user.username} />
     </div>
   );
 };
