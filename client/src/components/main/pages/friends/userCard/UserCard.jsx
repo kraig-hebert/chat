@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { useStyles } from './userCardStyles';
 import ProfilePic from './profilePic/ProfilePic';
+import IconsContainer from './iconsContainer/IconsContainer';
 
 const UserCard = (props) => {
   const { user } = props;
@@ -16,6 +17,7 @@ const UserCard = (props) => {
           <p>{`${user.firstName} ${user.lastName}`}</p>
         </div>
       </div>
+      <IconsContainer />
     </div>
   );
 };
