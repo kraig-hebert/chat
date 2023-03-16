@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 export const useStyles = createUseStyles((theme) => ({
   userCard: {
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
     width: '95%',
     padding: '5px',
@@ -11,9 +11,14 @@ export const useStyles = createUseStyles((theme) => ({
   },
   userInfo: {
     display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  userNames: {
+    display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     '& p': {
       '&:first-of-type': {
         color: theme.tertiary.main,

@@ -8,7 +8,6 @@ export const useStyles = createUseStyles((theme) => ({
   profilePic: {
     color: theme.tertiary.main,
     fontSize: '2.1rem',
-    margin: '2px',
   },
   statusBadge: (props) => ({
     position: 'absolute',

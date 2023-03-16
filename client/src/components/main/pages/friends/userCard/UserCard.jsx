@@ -9,10 +9,12 @@ const UserCard = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.userCard}>
-      <ProfilePic status={user.onlineStatus} />
       <div className={classes.userInfo}>
-        <p>{user.username}</p>
-        <p>{`${user.firstName} ${user.lastName}`}</p>
+        <ProfilePic status={user.onlineStatus} />
+        <div className={classes.userNames}>
+          <p>{user.username}</p>
+          <p>{`${user.firstName} ${user.lastName}`}</p>
+        </div>
       </div>
     </div>
   );
