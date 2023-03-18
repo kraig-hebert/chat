@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   IoPersonCircle,
@@ -11,16 +12,18 @@ import {
 import ActionIcon from './actionIcon/ActionIcon';
 import CurtainSlider from '../curtainSlider/CurtainSlider';
 import { useStyles } from './userBarStyles';
+import { selectCurrentUser } from '../../../reducers/userData';
 
 const UserBar = (props) => {
   const {} = props;
   const classes = useStyles();
+  const currentUser = useSelector(selectCurrentUser);
 
   return (
     <div className={classes.userBar}>
       <div className={classes.userContainer}>
         <IoPersonCircle className={classes.userIcon} />
-        <h3 className={classes.userName}>khebert24</h3>
+        <h3 className={classes.userName}>{currentUser.username}</h3>
       </div>
       <div className={classes.actionButtons}>
         <ActionIcon

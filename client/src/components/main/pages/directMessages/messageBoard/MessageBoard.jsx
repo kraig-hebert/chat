@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { selectActiveDirectMessageThread } from '../../../../../reducers/appSettings';
+import { selectCurrentUser } from '../../../../../reducers/userData';
 import { useStyles } from './messageBoardStyles';
 import MessageBlock from './messageBlock/MessageBlock';
 
@@ -17,12 +18,13 @@ const MessageBoard = (props) => {
   const activeDirectMessageThread = useSelector(
     selectActiveDirectMessageThread
   );
+  const currentUser = useSelector(selectCurrentUser);
 
   const isEven = (number) => number % 2 === 0;
   const setUser = (i) => {
     if (isEven(i)) {
       return activeDirectMessageThread;
-    } else return 'khebert24';
+    } else return currentUser.username;
   };
 
   const renderedMessageBlocks = [];

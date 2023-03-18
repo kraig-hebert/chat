@@ -10,12 +10,16 @@ const initialState = {
 const userData = createSlice({
   name: 'userData',
   initialState,
-  reducers: {},
+  reducers: {
+    currentUserLoaded(state, action) {
+      const currentUser = action.payload;
+      state.currentUser = currentUser;
+    },
+  },
 });
 
 export const selectCurrentUser = (state) => state.userData.currentUser;
-export const selectFriends = (state) => state.userData.friends;
 
-export const {} = userData.actions;
+export const { currentUserLoaded } = userData.actions;
 
 export default userData.reducer;
