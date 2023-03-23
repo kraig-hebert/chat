@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { users } from '../data/dummyData';
 
 const initialState = {
   currentUser: {},
@@ -6,6 +7,18 @@ const initialState = {
   pendingFriends: {},
   blockedUsers: {},
 };
+
+export const fetchFriends = createAsyncThunk('userData/fetchFriends', () => {
+  const friends = {
+    friend: {},
+    pending: {},
+    blocked: {},
+  };
+  users.forEach((user) => {
+    friends[user.friendStatus][user.id] = user;
+  });
+  return friends;
+});
 
 const userData = createSlice({
   name: 'userData',
@@ -16,9 +29,21 @@ const userData = createSlice({
       state.currentUser = currentUser;
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(fetchFriends.fulfilled, (state, action) => {
+      const { friends, pending, blocked } = action.payload;
+      state.allFriends = friends;
+      state.pendingFriends = pending;
+      state.blockedUsers = blocked;
+    });
+  },
 });
 
 export const selectCurrentUser = (state) => state.userData.currentUser;
+
+export const selectAllFriends = (state) => state.userData.allFriends;
+export const selectPendingFriends = (state) => state.userData.pendingFriends;
+export const selectBlockedUsers = (state) => state.userData.blockedUsers;
 
 export const { currentUserLoaded } = userData.actions;
 
