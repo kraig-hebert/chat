@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSelector, useDis, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import {
@@ -9,16 +10,20 @@ import {
 import { useStyles } from './optionCardStyles';
 
 const OptionCard = (props) => {
-  const { icon, title } = props;
+  const { route, icon, title } = props;
   const classes = useStyles();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const activeFriendsOption = useSelector(selectActiveFriendsOption);
 
-  const handleOptionClick = () => dispatch(friendsOptionSelected(title));
+  const handleOptionClick = () => {
+    dispatch(friendsOptionSelected(route));
+    navigate(`/friends/${route}`);
+  };
   return (
     <div
       className={
-        title === activeFriendsOption ? classes.activeCard : classes.optionCard
+        route === activeFriendsOption ? classes.activeCard : classes.optionCard
       }
       onClick={handleOptionClick}
     >
@@ -29,6 +34,7 @@ const OptionCard = (props) => {
 };
 
 OptionCard.propTypes = {
+  route: PropTypes.string,
   icon: PropTypes.object,
   title: PropTypes.string,
 };

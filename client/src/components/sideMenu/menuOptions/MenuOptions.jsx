@@ -44,7 +44,7 @@ const MenuOptions = (props) => {
           path="/direct-messages"
           element={<DirectMessagesOptions inputValue={inputValue} />}
         />
-        <Route path="/friends" element={<FriendsOptions />} />
+        <Route path="/friends/*" element={<FriendsOptions />} />
         <Route path="/hangouts" element={<HangoutsOptions />} />
         <Route path="/explore" element={<ExploreOptions />} />
         <Route path="/settings" element={<SettingsOptions />} />

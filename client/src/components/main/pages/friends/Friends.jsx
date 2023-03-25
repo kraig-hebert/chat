@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useTheme } from 'react-jss';
 import { IoSearchCircleOutline, IoSearchCircle } from 'react-icons/io5';
 
 import { useStyles } from './friendsStyles';
 import TextInput from '../../../common/textInput/TextInput';
-import FriendsList from './friendsList/FriendsList';
+import AllFriends from './allFriends/AllFriends';
 
 const Friends = (props) => {
   const { height } = props;
+  const { type } = useParams();
   const classes = useStyles({ height });
   const theme = useTheme();
 
   const [inputValue, setInputValue] = useState('');
 
+  let renderedFriendsList;
+  switch (type) {
+    case 'all': {
+      return <AllFriends />;
+    }
+  }
   return (
     <div className={classes.friends}>
       <TextInput
@@ -27,7 +35,7 @@ const Friends = (props) => {
         Icon={IoSearchCircleOutline}
         FocusedIcon={IoSearchCircle}
       />
-      <FriendsList />
+      {renderedFriendsList}
     </div>
   );
 };

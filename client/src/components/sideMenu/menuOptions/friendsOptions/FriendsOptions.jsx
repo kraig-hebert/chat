@@ -12,9 +12,13 @@ const FriendsOptions = (props) => {
 
   return (
     <div className={classes.friendsOptions}>
-      <OptionCard title="All" icon={<IoAt />} />
-      <OptionCard title="Pending Requests" icon={<MdPendingActions />} />
-      <OptionCard title="Blocked" icon={<IoBan />} />
+      <OptionCard route="all" title="All" icon={<IoAt />} />
+      <OptionCard
+        route="pending"
+        title="Pending Requests"
+        icon={<MdPendingActions />}
+      />
+      <OptionCard route="blocked" title="Blocked" icon={<IoBan />} />
     </div>
   );
 };

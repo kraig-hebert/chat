@@ -30,7 +30,10 @@ const Main = (props) => {
           path="/direct-messages"
           element={<DirectMessages height={routeHeight} />}
         />
-        <Route path="/friends" element={<Friends height={routeHeight} />} />
+        <Route
+          path="/friends/:type"
+          element={<Friends height={routeHeight} />}
+        />
         <Route path="/hangouts" element={<Hangouts height={routeHeight} />} />
         <Route path="/explore" element={<Explore height={routeHeight} />} />
         <Route path="/settings" element={<Settings height={routeHeight} />} />
