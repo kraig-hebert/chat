@@ -1,16 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { users } from '../../../../../data/dummyData';
-
 import UserCard from '../userCard/UserCard';
+import { selectAllFriends } from '../../../../../reducers/userData';
 import { useStyles } from './allFriendsStyles';
 
 const AllFriends = (props) => {
   const {} = props;
   const classes = useStyles();
+  const friends = useSelector(selectAllFriends);
 
-  const renderedUserCards = users.map((user, index) => (
+  const renderedUserCards = Object.values(friends).map((user, index) => (
     <UserCard user={user} key={index} />
   ));
 

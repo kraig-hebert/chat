@@ -19,7 +19,16 @@ const Friends = (props) => {
   let renderedFriendsList;
   switch (type) {
     case 'all': {
-      return <AllFriends />;
+      renderedFriendsList = <AllFriends />;
+    }
+    case 'pending': {
+      renderedFriendsList = <AllFriends />;
+    }
+    case 'blocked': {
+      renderedFriendsList = <AllFriends />;
+    }
+    default: {
+      renderedFriendsList = <AllFriends />;
     }
   }
   return (

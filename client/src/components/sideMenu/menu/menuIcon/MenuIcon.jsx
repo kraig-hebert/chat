@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import {
@@ -13,16 +13,18 @@ const MenuIcon = (props) => {
   const { icon, activeIcon, menuName } = props;
   const classes = useStyles();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const activeMenu = useSelector(selectActiveMenu);
-  const handleIconClick = () => dispatch(menuIconSelected(menuName));
+  const handleIconClick = () => {
+    dispatch(menuIconSelected(menuName));
+    navigate(`${menuName}`);
+  };
 
   return (
-    <Link to={menuName}>
-      <div className={classes.menuIcon} onClick={handleIconClick}>
-        {activeMenu === menuName ? activeIcon : icon}
-      </div>
-    </Link>
+    <div className={classes.menuIcon} onClick={handleIconClick}>
+      {activeMenu === menuName ? activeIcon : icon}
+    </div>
   );
 };
 

@@ -31,8 +31,8 @@ const userData = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchFriends.fulfilled, (state, action) => {
-      const { friends, pending, blocked } = action.payload;
-      state.allFriends = friends;
+      const { friend, pending, blocked } = action.payload;
+      state.allFriends = friend;
       state.pendingFriends = pending;
       state.blockedUsers = blocked;
     });

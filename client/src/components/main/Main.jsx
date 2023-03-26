@@ -30,6 +30,7 @@ const Main = (props) => {
           path="/direct-messages"
           element={<DirectMessages height={routeHeight} />}
         />
+        <Route path="/friends" element={<Friends height={routeHeight} />} />
         <Route
           path="/friends/:type"
           element={<Friends height={routeHeight} />}

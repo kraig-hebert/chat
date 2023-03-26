@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoWifi, IoAt, IoBan } from 'react-icons/io5';
+import { IoAt, IoBan } from 'react-icons/io5';
 import { MdPendingActions } from 'react-icons/md';
 
 import { useStyles } from './friendsOptionsStyles';
