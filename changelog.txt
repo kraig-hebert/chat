@@ -1,3 +1,12 @@
+3-26-23
+-------
+New
+***
+*Friends
+    - set up layout for friends sub-pages and options
+    - added routes to react-router-dom
+    - created each sub page layouy and logic
+
 3-13-23
 -------
 ADD-ONs
