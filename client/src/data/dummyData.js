@@ -18,7 +18,8 @@ export const users = [
     username: 'cluelessWonderman',
     firstName: 'Guy',
     lastName: 'Gadot',
-    friendStatus: 'friend',
+    friendStatus: 'pending',
+    requestDirection: 'out',
     onlineStatus: 'online',
   },
   {
@@ -27,6 +28,7 @@ export const users = [
     firstName: 'Hillary',
     lastName: 'Martin',
     friendStatus: 'pending',
+    requestDirection: 'out',
     onlineStatus: 'online',
   },
   {
@@ -35,6 +37,7 @@ export const users = [
     firstName: 'Marcus',
     lastName: 'Roberts',
     friendStatus: 'pending',
+    requestDirection: 'in',
     onlineStatus: 'asleep',
   },
   {
@@ -43,6 +46,7 @@ export const users = [
     firstName: 'Donald',
     lastName: 'Trump',
     friendStatus: 'blocked',
+    blockDirection: 'in',
     onlineStatus: 'offline',
   },
   {
@@ -67,6 +71,7 @@ export const users = [
     firstName: 'Joe',
     lastName: 'Biden',
     friendStatus: 'blocked',
+    blockDirection: 'out',
     onlineStatus: 'asleep',
   },
 ];

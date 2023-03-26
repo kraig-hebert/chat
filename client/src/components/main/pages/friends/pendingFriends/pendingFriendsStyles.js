@@ -22,4 +22,17 @@ export const useStyles = createUseStyles((theme) => ({
       borderRadius: '2px',
     },
   },
+  requestGroup: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: '25px',
+    '& h2': {
+      width: '95%',
+      fontSize: '1.1rem',
+      color: theme.tertiary.main,
+    },
+  },
 }));

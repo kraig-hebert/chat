@@ -9,7 +9,6 @@ import { useStyles } from './pendingFriendsStyles';
 const PendingFriends = (props) => {
   const {} = props;
   const classes = useStyles();
-  console.log('pending');
 
   const pendingFriends = useSelector(selectPendingFriends);
 
@@ -17,7 +16,24 @@ const PendingFriends = (props) => {
     <UserCard user={user} key={index} />
   ));
 
-  return <div className={classes.pendingFriends}>{renderedUserCards}</div>;
+  const incomingRequestUserCards = renderedUserCards.filter(
+    (card) => card.props.user.requestDirection === 'in'
+  );
+  const outgoingRequestUserCards = renderedUserCards.filter(
+    (card) => card.props.user.requestDirection === 'out'
+  );
+  return (
+    <div className={classes.pendingFriends}>
+      <div className={classes.requestGroup}>
+        <h2>Incoming Requests</h2>
+        {incomingRequestUserCards}
+      </div>
+      <div className={classes.requestGroup}>
+        <h2>Outgoing Requests</h2>
+        {outgoingRequestUserCards}
+      </div>
+    </div>
+  );
 };
 
 PendingFriends.propTypes = {};

@@ -9,7 +9,6 @@ import { useStyles } from './blockedUsersStyles';
 const BlockedUsers = (props) => {
   const {} = props;
   const classes = useStyles();
-  console.log('pending');
 
   const blockedUsers = useSelector(selectBlockedUsers);
 
@@ -17,7 +16,25 @@ const BlockedUsers = (props) => {
     <UserCard user={user} key={index} />
   ));
 
-  return <div className={classes.blockedUsers}>{renderedUserCards}</div>;
+  const incomingBlockedUserCards = renderedUserCards.filter(
+    (card) => card.props.user.blockDirection === 'in'
+  );
+  const outgoingBlockedUserCards = renderedUserCards.filter(
+    (card) => card.props.user.blockDirection === 'out'
+  );
+
+  return (
+    <div className={classes.blockedUsers}>
+      <div className={classes.blockedGroup}>
+        <h2>Blocked By User</h2>
+        {incomingBlockedUserCards}
+      </div>
+      <div className={classes.blockedGroup}>
+        <h2>Blocked Users</h2>
+        {outgoingBlockedUserCards}
+      </div>
+    </div>
+  );
 };
 
 BlockedUsers.propTypes = {};
