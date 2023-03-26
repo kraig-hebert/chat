@@ -7,7 +7,6 @@ import IconsContainer from './iconsContainer/IconsContainer';
 
 const UserCard = (props) => {
   const { user } = props;
-  console.log(user);
   const classes = useStyles();
   return (
     <div className={classes.userCard}>

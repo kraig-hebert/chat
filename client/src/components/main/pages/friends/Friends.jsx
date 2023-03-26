@@ -7,6 +7,8 @@ import { IoSearchCircleOutline, IoSearchCircle } from 'react-icons/io5';
 import { useStyles } from './friendsStyles';
 import TextInput from '../../../common/textInput/TextInput';
 import AllFriends from './allFriends/AllFriends';
+import PendingFriends from './pendingFriends/PendingFriends';
+import BlockedUsers from './blockedUsers/BlockedUsers';
 
 const Friends = (props) => {
   const { height } = props;
@@ -20,15 +22,19 @@ const Friends = (props) => {
   switch (type) {
     case 'all': {
       renderedFriendsList = <AllFriends />;
+      break;
     }
     case 'pending': {
-      renderedFriendsList = <AllFriends />;
+      renderedFriendsList = <PendingFriends />;
+      break;
     }
     case 'blocked': {
-      renderedFriendsList = <AllFriends />;
+      renderedFriendsList = <BlockedUsers />;
+      break;
     }
     default: {
       renderedFriendsList = <AllFriends />;
+      break;
     }
   }
   return (

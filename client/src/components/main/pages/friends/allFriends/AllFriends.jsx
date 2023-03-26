@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { users } from '../../../../../data/dummyData';
 import UserCard from '../userCard/UserCard';
 import { selectAllFriends } from '../../../../../reducers/userData';
 import { useStyles } from './allFriendsStyles';
