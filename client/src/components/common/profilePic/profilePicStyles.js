@@ -12,6 +12,7 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     width: '35px',
     height: '35px',
+    margin: '5px',
     borderRadius: '50%',
     fontSize: '2.1rem',
     '& h3': {
@@ -21,13 +22,13 @@ export const useStyles = createUseStyles((theme) => ({
   },
   statusBadge: (props) => ({
     position: 'absolute',
-    top: '1px',
-    right: '1px',
+    top: '6px',
+    right: '6px',
     width: '8px',
     height: '8px',
     backgroundColor: props.badgeColor,
     borderRadius: '50%',
-    outline: `3px solid ${theme.mainBG.main}`,
+    outline: `2px solid ${theme.mainBG.main}`,
     display: 'block',
   }),
 }));

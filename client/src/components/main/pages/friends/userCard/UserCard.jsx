@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './userCardStyles';
-import ProfilePic from './profilePic/ProfilePic';
+import ProfilePic from '../../../../common/profilePic/ProfilePic';
 import IconsContainer from './iconsContainer/IconsContainer';
 
 const UserCard = (props) => {
