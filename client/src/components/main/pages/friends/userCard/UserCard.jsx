@@ -11,13 +11,13 @@ const UserCard = (props) => {
   return (
     <div className={classes.userCard}>
       <div className={classes.userInfo}>
-        <ProfilePic status={user.onlineStatus} />
+        <ProfilePic status={user.onlineStatus} username={user.username} />
         <div className={classes.userNames}>
           <p>{user.username}</p>
           <p>{`${user.firstName} ${user.lastName}`}</p>
         </div>
       </div>
-      <IconsContainer username-={user.username} />
+      <IconsContainer user={user} />
     </div>
   );
 };

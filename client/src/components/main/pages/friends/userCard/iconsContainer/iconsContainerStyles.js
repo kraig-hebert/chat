@@ -7,7 +7,7 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     gap: '10px',
   },
-  iconContainer: {
+  icon: {
     position: 'relative',
     display: 'flex',
     justifyContent: 'center',
@@ -15,8 +15,15 @@ export const useStyles = createUseStyles((theme) => ({
     width: '30px',
     height: '30px',
     borderRadius: '50%',
-    backgroundColor: theme.tertiary.main,
     cursor: 'pointer',
+    '& *': {
+      color: theme.mainBG.main,
+      fontSize: '1.5rem',
+    },
+  },
+  activeIcon: {
+    extend: 'icon',
+    backgroundColor: theme.tertiary.main,
     '&:hover': {
       backgroundColor: theme.tertiary.quarterAlpha,
       '& *': {
@@ -24,8 +31,12 @@ export const useStyles = createUseStyles((theme) => ({
       },
     },
   },
-  icon: {
-    color: theme.mainBG.main,
-    fontSize: '1.5rem',
+  disabledIcon: {
+    extend: 'icon',
+    backgroundColor: theme.secondary.main,
+    cursor: 'default',
+    '& *': {
+      color: theme.tertiary.quarterAlpha,
+    },
   },
 }));

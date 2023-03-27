@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoPersonCircle } from 'react-icons/io5';
 
 import { useStyles } from './profilePicStyles';
 
 const ProfilePic = (props) => {
-  const { status } = props;
+  const { status, username } = props;
 
   const badgeColorOptions = {
     online: 'green',
@@ -16,7 +15,9 @@ const ProfilePic = (props) => {
   const classes = useStyles({ badgeColor: badgeColorOptions[status] });
   return (
     <div className={classes.profilePicContainer}>
-      <IoPersonCircle className={classes.profilePic} />
+      <div className={classes.profilePic}>
+        <h3>{username.charAt(0).toUpperCase()}</h3>
+      </div>
       <div className={classes.statusBadge}></div>
     </div>
   );
@@ -24,6 +25,7 @@ const ProfilePic = (props) => {
 
 ProfilePic.propTypes = {
   status: PropTypes.string,
+  username: PropTypes.string,
 };
 
 export default ProfilePic;

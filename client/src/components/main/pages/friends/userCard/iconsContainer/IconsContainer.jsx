@@ -8,15 +8,16 @@ import { userCardDirectMessageIconSelected } from '../../../../../../reducers/ap
 import { useStyles } from './iconsContainerStyles';
 
 const IconsContainer = (props) => {
-  const { username } = props;
+  const { user } = props;
   const classes = useStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleMessageIconClick = () => {
+    if (user.friendStatus !== 'friend') return;
     dispatch(
       userCardDirectMessageIconSelected({
-        username,
+        username: user.username,
         activeMenu: 'direct-messages',
       })
     );
@@ -25,18 +26,25 @@ const IconsContainer = (props) => {
   const handleOptionsIconClick = () => {};
   return (
     <div className={classes.iconsContainer}>
-      <div className={classes.iconContainer} onClick={handleMessageIconClick}>
-        <IoChatbox className={classes.icon} />
+      <div
+        className={
+          user.friendStatus === 'friend'
+            ? classes.activeIcon
+            : classes.disabledIcon
+        }
+        onClick={handleMessageIconClick}
+      >
+        <IoChatbox />
       </div>
-      <div className={classes.iconContainer} onClick={handleOptionsIconClick}>
-        <IoEllipsisVertical className={classes.icon} />
+      <div className={classes.activeIcon} onClick={handleOptionsIconClick}>
+        <IoEllipsisVertical />
       </div>
     </div>
   );
 };
 
 IconsContainer.propTypes = {
-  username: PropTypes.string,
+  user: PropTypes.object,
 };
 
 export default IconsContainer;
