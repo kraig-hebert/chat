@@ -14,7 +14,7 @@ import PopOver from '../../../../common/popOver/PopOver';
 import GroupCardOptions from './groupCardOptions/GroupCardOptions';
 import TitleInput from './titleInput/TitleInput';
 import Badge from '../../../../common/badge/Badge';
-
+import ProfilePic from '../../../../common/profilePic/ProfilePic';
 const GroupCard = (props) => {
   const { cardData } = props;
   const dispatch = useDispatch();
@@ -49,7 +49,7 @@ const GroupCard = (props) => {
     >
       <div className={classes.groupInfoContainer} ref={groupInfoRef}>
         <div className={classes.groupInfo} onClick={handleCardClick}>
-          <IoPeopleCircle className={classes.groupIcon} />
+          <ProfilePic status="none" username={cardData.group.title} />
           <TitleInput
             groupInfoHeight={groupInfoHeight}
             inputIsFocused={inputIsFocused}

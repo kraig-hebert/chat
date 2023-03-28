@@ -10,6 +10,7 @@ const ProfilePic = (props) => {
     online: 'green',
     asleep: 'yellow',
     offline: 'red',
+    none: 'transparent',
   };
 
   const classes = useStyles({ badgeColor: badgeColorOptions[status] });

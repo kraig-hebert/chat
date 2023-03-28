@@ -14,6 +14,7 @@ export const useStyles = createUseStyles((theme) => ({
     height: '35px',
     margin: '5px',
     borderRadius: '50%',
+    border: `2px solid ${theme.tertiary.main}`,
     fontSize: '2.1rem',
     '& h3': {
       fontSize: '1.25rem',
@@ -22,13 +23,13 @@ export const useStyles = createUseStyles((theme) => ({
   },
   statusBadge: (props) => ({
     position: 'absolute',
-    top: '6px',
-    right: '6px',
+    top: '8px',
+    right: '8px',
     width: '8px',
     height: '8px',
     backgroundColor: props.badgeColor,
     borderRadius: '50%',
     outline: `2px solid ${theme.mainBG.main}`,
-    display: 'block',
+    display: props.badgeColor === 'transparent' ? 'none' : 'block',
   }),
 }));
