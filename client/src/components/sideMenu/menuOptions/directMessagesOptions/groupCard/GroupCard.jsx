@@ -1,7 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { IoPeopleCircle, IoEllipsisVerticalCircle } from 'react-icons/io5';
+import { IoEllipsisVerticalCircle } from 'react-icons/io5';
 
 import {
   directMessageThreadSelected,
@@ -66,6 +66,7 @@ const GroupCard = (props) => {
       {showMembers && <MemberList members={cardData.group.members} />}
       <Badge badgeCount={cardData.group.unread} />
       <PopOver
+        direction="left"
         showPopOver={showPopOver}
         setShowPopOver={setShowPopOver}
         children={

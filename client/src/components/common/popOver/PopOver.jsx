@@ -6,32 +6,33 @@ import useCloseOnClickAway from '../../../hooks/useCloseOnClickAway';
 import { useStyles } from './popOverStyles';
 
 const PopOver = (props) => {
-  const { showPopOver, setShowPopOver, children } = props;
-  const classes = useStyles({ showPopOver });
+  const { direction, showPopOver, setShowPopOver, children } = props;
+
+  const classes = useStyles({ showPopOver, direction });
   const popOverRef = useRef(null);
 
   const handlePopOverClose = () => setShowPopOver(false);
 
   useCloseOnClickAway(popOverRef, showPopOver, setShowPopOver);
 
+  const setPopOverDirection = () => {
+    if (direction === 'left') return classes.left;
+    else if (direction === 'right') return classes.right;
+  };
+
   return (
     <div
-      className={classes.popOverContainer}
+      className={setPopOverDirection()}
       onClick={handlePopOverClose}
       ref={popOverRef}
     >
-      <div className={classes.popOver}>
-        {children}
-        <IoCloseCircle
-          className={classes.closeIcon}
-          onClick={handlePopOverClose}
-        />
-      </div>
+      <div className={classes.popOver}>{children}</div>
     </div>
   );
 };
 
 PopOver.propTypes = {
+  directiom: PropTypes.string,
   showPopOver: PropTypes.bool,
   setShowPopOver: PropTypes.func,
   children: PropTypes.object,

@@ -39,4 +39,5 @@ export const useStyles = createUseStyles((theme) => ({
       color: theme.tertiary.quarterAlpha,
     },
   },
+  testChild: {},
 }));
