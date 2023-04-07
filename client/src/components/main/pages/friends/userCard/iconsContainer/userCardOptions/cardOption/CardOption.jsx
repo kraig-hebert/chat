@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { useStyles } from './cardOptionStyle';
+import { useStyles } from './cardOptionStyles';
 
 const CardOption = (props) => {
-  const { icon, swapIcon, title, swapTitle, onClick, swappable } = props;
+  const {
+    icon,
+    swapIcon,
+    title,
+    swapTitle,
+    onClick,
+    swappable,
+    setShowPopOver,
+  } = props;
   const classes = useStyles();
   const [isSwapped, setIsSwapped] = useState(false);
 
@@ -40,16 +48,7 @@ const CardOption = (props) => {
 };
 
 CardOption.propTypes = {
-  icon: PropTypes.object,
-  swapIcon: PropTypes.object,
-  title: PropTypes.string,
-  swapTitle: PropTypes.string,
-  onClick: PropTypes.func,
-  swappable: PropTypes.bool,
-};
-
-CardOption.defaultProps = {
-  swappable: false,
+  setShowPopOver: PropTypes.func,
 };
 
 export default CardOption;

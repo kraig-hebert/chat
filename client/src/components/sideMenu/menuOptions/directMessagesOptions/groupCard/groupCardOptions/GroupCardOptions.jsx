@@ -14,7 +14,7 @@ import { useStyles } from './groupCardOptionsStyles';
 import CardOption from './cardOption/CardOption';
 
 const GroupCardOptions = (props) => {
-  const { setShowMembers, inputFocused, setInputIsFocused } = props;
+  const { setShowMembers, setInputIsFocused } = props;
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -48,7 +48,6 @@ const GroupCardOptions = (props) => {
 
 GroupCardOptions.propTypes = {
   setShowMembers: PropTypes.func,
-  inputIsFocused: PropTypes.bool,
   setInputIsFocused: PropTypes.func,
 };
 

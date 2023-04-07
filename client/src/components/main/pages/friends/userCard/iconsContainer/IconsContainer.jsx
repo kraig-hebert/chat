@@ -7,6 +7,7 @@ import { IoChatbox, IoEllipsisVertical } from 'react-icons/io5';
 import { userCardDirectMessageIconSelected } from '../../../../../../reducers/appSettings';
 import { useStyles } from './iconsContainerStyles';
 import PopOver from '../../../../../common/popOver/PopOver';
+import UserCardOptions from './userCardOptions/UserCardOptions';
 
 const IconsContainer = (props) => {
   const { user } = props;
@@ -28,16 +29,6 @@ const IconsContainer = (props) => {
     navigate('/direct-messages');
   };
 
-  const TestChild = () => {
-    return (
-      <div className={classes.testChild}>
-        <p>Test</p>
-        <p>Test</p>
-        <p>Test</p>
-      </div>
-    );
-  };
-
   return (
     <div className={classes.iconsContainer}>
       <div
@@ -52,13 +43,13 @@ const IconsContainer = (props) => {
       </div>
       <div className={classes.activeIcon} onClick={handleOptionsClick}>
         <IoEllipsisVertical />
-        <PopOver
-          direction="right"
-          showPopOver={showPopOver}
-          setShowPopOver={setShowPopOver}
-          children={<TestChild />}
-        />
       </div>
+      <PopOver
+        direction="right"
+        showPopOver={showPopOver}
+        setShowPopOver={setShowPopOver}
+        children={<UserCardOptions setShowPopOver={setShowPopOver} />}
+      />
     </div>
   );
 };

@@ -2,13 +2,13 @@ import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles((theme) => ({
   iconsContainer: {
+    position: 'relative',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     gap: '10px',
   },
   icon: {
-    position: 'relative',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -26,7 +26,7 @@ export const useStyles = createUseStyles((theme) => ({
     backgroundColor: theme.tertiary.main,
     '&:hover': {
       backgroundColor: theme.tertiary.quarterAlpha,
-      '& *': {
+      '&.first-child': {
         color: theme.secondary.main,
       },
     },
