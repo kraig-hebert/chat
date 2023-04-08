@@ -16,8 +16,14 @@ const PopOver = (props) => {
   useCloseOnClickAway(popOverRef, showPopOver, setShowPopOver);
 
   const setPopOverDirection = () => {
-    if (direction === 'left') return classes.left;
-    else if (direction === 'right') return classes.right;
+    switch (direction) {
+      case 'left':
+        return classes.left;
+      case 'right':
+        return classes.right;
+      case 'bottomRight':
+        return classes.bottomRight;
+    }
   };
 
   return (

@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  IoPricetags,
-  IoEye,
-  IoEyeOff,
-  IoOptions,
-  IoPersonAdd,
-} from 'react-icons/io5';
+import { IoEye, IoEyeOff, IoIdCard, IoWarning } from 'react-icons/io5';
+import { SiAdblock } from 'react-icons/si';
 
 import { useStyles } from './userCardOptionsStyles';
 import CardOption from './cardOption/CardOption';
@@ -19,31 +14,19 @@ const UserCardOptions = (props) => {
   return (
     <div className={classes.userCardOptions}>
       <CardOption
-        icon={<IoEye />}
-        swapIcon={<IoEyeOff />}
-        title="Show Members"
-        swapTitle="Hide Members"
+        icon={<IoIdCard />}
+        title="Profile"
         onClick={handleTestClick}
-        swappable
-        setShowPopOver={setShowPopOver}
       />
       <CardOption
-        icon={<IoEye />}
-        swapIcon={<IoEyeOff />}
-        title="Show Members"
-        swapTitle="Hide Members"
+        icon={<SiAdblock />}
+        title="Block User"
         onClick={handleTestClick}
-        swappable
-        setShowPopOver={setShowPopOver}
       />
       <CardOption
-        icon={<IoEye />}
-        swapIcon={<IoEyeOff />}
-        title="Show Members"
-        swapTitle="Hide Members"
+        icon={<IoWarning />}
+        title="Report User"
         onClick={handleTestClick}
-        swappable
-        setShowPopOver={setShowPopOver}
       />
     </div>
   );

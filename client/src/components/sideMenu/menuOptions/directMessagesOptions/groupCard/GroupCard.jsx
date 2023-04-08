@@ -66,7 +66,7 @@ const GroupCard = (props) => {
       {showMembers && <MemberList members={cardData.group.members} />}
       <Badge badgeCount={cardData.group.unread} />
       <PopOver
-        direction="left"
+        direction="right"
         showPopOver={showPopOver}
         setShowPopOver={setShowPopOver}
         children={

@@ -45,7 +45,7 @@ const IconsContainer = (props) => {
         <IoEllipsisVertical />
       </div>
       <PopOver
-        direction="right"
+        direction="left"
         showPopOver={showPopOver}
         setShowPopOver={setShowPopOver}
         children={<UserCardOptions setShowPopOver={setShowPopOver} />}
