@@ -7,7 +7,7 @@ export const useStyles = createUseStyles((theme) => ({
     justifyContent: 'space-around',
     alignItems: 'center',
     width: '90%',
-    padding: '0 2px',
+    padding: '0 5px',
     marginBottom: '20px',
     backgroundColor: theme.tertiary.main,
     borderRadius: '5px',
@@ -19,6 +19,6 @@ export const useStyles = createUseStyles((theme) => ({
   },
   icon: {
     color: theme.mainBG.main,
-    fontSize: '2.75rem',
+    fontSize: '1.8rem',
   },
 }));

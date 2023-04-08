@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoIdCard, IoWarning } from 'react-icons/io5';
+import { IoIdCard, IoWarning, IoVolumeMute } from 'react-icons/io5';
 import { SiAdblock } from 'react-icons/si';
 
-import { useStyles } from './userCardOptionsStyles';
-import CardOption from '../../../../../../common/cardOption/CardOption';
+import { useStyles } from './soloCardOptionsStyles';
+import CardOption from '../../../../../common/cardOption/CardOption';
 
-const UserCardOptions = (props) => {
+const SoloCardOptions = (props) => {
   const {} = props;
   const classes = useStyles();
-
   const handleTestClick = () => undefined;
   return (
-    <div className={classes.userCardOptions}>
+    <div className={classes.soloCardOptions}>
       <CardOption
         icon={<IoIdCard />}
         title="Profile"
@@ -28,10 +27,15 @@ const UserCardOptions = (props) => {
         title="Report User"
         onClick={handleTestClick}
       />
+      <CardOption
+        icon={<IoVolumeMute />}
+        title="Mute Notifications"
+        onClick={handleTestClick}
+      />
     </div>
   );
 };
 
-UserCardOptions.propTypes = {};
+SoloCardOptions.propsTypes = {};
 
-export default UserCardOptions;
+export default SoloCardOptions;

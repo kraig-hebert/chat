@@ -11,7 +11,7 @@ import {
 
 import { groupCardSettingsSelected } from '../../../../../../reducers/appSettings';
 import { useStyles } from './groupCardOptionsStyles';
-import CardOption from './cardOption/CardOption';
+import CardOption from '../../../../../common/cardOption/CardOption';
 
 const GroupCardOptions = (props) => {
   const { setShowMembers, setInputIsFocused } = props;

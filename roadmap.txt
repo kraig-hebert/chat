@@ -2,6 +2,9 @@ BUG FIXES
 -------------------------------------------------------------------------
 - when user navigates backwards and forwards the active MenuIcon does not change with the page route
 
+FRIENDS
+- figure out way to either stop the app from opening solo message when you click options icon or force the group options icon to select the group thread
+
 *************************************************************************
 
 FEATURES

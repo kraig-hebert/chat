@@ -15,7 +15,7 @@ export const useStyles = createUseStyles((theme) => ({
     },
     '& p:last-of-type': {
       color: theme.light.main,
-      fontSize: '.6rem',
+      fontSize: '.55rem',
       '& span': {
         fontSize: '.6rem',
         color: theme.mainBG.main,

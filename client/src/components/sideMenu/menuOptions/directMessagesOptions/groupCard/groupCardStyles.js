@@ -31,11 +31,6 @@ export const useStyles = createUseStyles((theme) => ({
     width: '100%',
     cursor: 'pointer',
   },
-  groupIcon: {
-    color: theme.mainBG.main,
-    fontSize: '2.75rem',
-    margin: '0 5px',
-  },
   optionsIcon: {
     fontSize: '1.8rem',
     color: theme.mainBG.main,
