@@ -18,6 +18,7 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     color: theme.mainBG.main,
     width: '100%',
+    height: '15px',
     fontSize: '.6rem',
     margin: '2px 0',
     padding: '0 2px',
@@ -27,7 +28,24 @@ export const useStyles = createUseStyles((theme) => ({
       backgroundColor: theme.dark.quarterAlpha,
     },
   },
-  icon: {
-    marginRight: '2px',
+  statusBadge: {
+    display: 'flex',
+    width: '6px',
+    height: '6px',
+    border: `1px solid ${theme.mainBG.main}`,
+    borderRadius: '50%',
+    margin: '3px 2px 2px 2px',
+  },
+  online: {
+    extend: 'statusBadge',
+    backgroundColor: 'green',
+  },
+  asleep: {
+    extend: 'statusBadge',
+    backgroundColor: 'yellow',
+  },
+  offline: {
+    extend: 'statusBadge',
+    backgroundColor: 'red',
   },
 }));

@@ -79,17 +79,17 @@ export const users = [
 export const groups = [
   {
     title: 'Siblings',
-    members: ['XjsmithX', 'HomerSimp', 'MontySnek'],
+    members: [1, 4, 3],
     unread: 2,
   },
   {
     title: 'Homies',
-    members: ['LIGERwoods', 'Da-Mayne-Qwayne', 'MontySnek'],
+    members: [7, 6, 3],
     unread: 0,
   },
   {
     title: 'Enemies',
-    members: ['dark.brandon', 'theDRUMF'],
+    members: [8, 5],
     unread: 6,
   },
 ];

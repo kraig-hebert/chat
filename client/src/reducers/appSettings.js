@@ -25,6 +25,9 @@ const appSettings = createSlice({
       const option = action.payload;
       state.activeFriendsOption = option;
     },
+    userProfileOptionSelected(state) {
+      state.curtainSlider.isOpen = true;
+    },
     groupCardSettingsSelected(state) {
       state.curtainSlider.isOpen = true;
     },
@@ -55,6 +58,7 @@ export const {
   curtainSliderClosed,
   directMessageThreadSelected,
   friendsOptionSelected,
+  userProfileOptionSelected,
   groupCardSettingsSelected,
   menuIconSelected,
   userCardDirectMessageIconSelected,

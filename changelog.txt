@@ -1,7 +1,17 @@
+4-8-23
+-------
+ADD-ONS
+***
+*Direct-Messages
+    - added status badges to each user inside of the MemberList of the GroupCard
+    
+
 4-7-23
 -------
 ADD-ONS
 ***
+*Direct-Messages
+    - added cardOptions to the SoloCard component
 *Friends
     - added cardoptions to each friend with default options for now
     

@@ -17,7 +17,7 @@ export const useStyles = createUseStyles((theme) => ({
       color: theme.light.main,
       fontSize: '.55rem',
       '& span': {
-        fontSize: '.6rem',
+        fontSize: '.55rem',
         color: theme.mainBG.main,
       },
     },
