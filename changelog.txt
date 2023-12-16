@@ -1,3 +1,15 @@
+12-25-23
+---------
+CHANGES
+***
+*Home
+    - updated behavior of clicking the Home Options menu icon
+        - removed the <HomeOptions /> component
+        - sideMenuOptions will disapear becuse there are none
+        - main stage will take up space that opens up 
+*Direct-Messages
+    - clicking a friend inside of a group will bring up individual text thread and highlight the username un any groups that are expanded
+
 4-8-23
 -------
 ADD-ONS
