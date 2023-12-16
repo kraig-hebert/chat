@@ -15,5 +15,6 @@ export const useStyles = createUseStyles((theme) => ({
     // borderRight: `1px solid ${theme.tertiary.main}`,
     // borderBottom: `1px solid ${theme.tertiary.main}`,
     backgroundColor: theme.secondary.main,
+    transition: 'width .10s',
   }),
 }));
