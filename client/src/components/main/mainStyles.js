@@ -6,7 +6,8 @@ export const useStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '68%',
+    flexGrow: 1,
     height: '95%',
+    paddingLeft: '10px',
   },
 });

@@ -1,8 +1,10 @@
 import React, { useRef, useLayoutEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './mainStyles';
+import { selectActiveMenu } from '../../reducers/appSettings';
 import UserBar from './userBar/UserBar';
 import DirectMessages from './pages/directMessages/DirectMessages';
 import Home from './pages/home/Home';
@@ -13,6 +15,8 @@ import Settings from './pages/settings/Settings';
 
 const Main = (props) => {
   const {} = props;
+  const activeMenu = useSelector(selectActiveMenu);
+
   const classes = useStyles();
   const mainRef = useRef();
   const [routeHeight, setRouteHeight] = useState();

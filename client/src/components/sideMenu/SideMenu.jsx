@@ -7,7 +7,9 @@ import MenuOptions from './menuOptions/MenuOptions';
 
 const SideMenu = (props) => {
   const {} = props;
+
   const classes = useStyles();
+
   return (
     <div className={classes.sideMenu}>
       <Menu />

@@ -9,6 +9,10 @@ FRIENDS
 
 FEATURES
 -------------------------------------------------------------------------
+USERS
+- set up dummy photos for other user pictures for avatar
+- allow user to upload image to use as avatar
+
 DIRECT-MESSAGES
 - update the date logic for MessageBoard
     - only show time of message
@@ -16,3 +20,11 @@ DIRECT-MESSAGES
 
 FRIENDS
 - create cardoptions for each type of friend page
+
+HOME
+- hide side options and only show blue bar, while widing main stage
+- show cards of different quick options
+    - new messages
+    - hangouts with most activity
+    - number of friend requests and acceptances
+    - pending hangout requests and acceptances

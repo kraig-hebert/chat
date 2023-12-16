@@ -21,6 +21,11 @@ import { useStyles } from './menuStyles';
 const Menu = (props) => {
   const {} = props;
 
+  // const setStyles = () => {
+  //   if (activeMenu === 'home') return { width: '100px' };
+  //   else return { width: '25%' };
+  // };
+
   const classes = useStyles();
 
   return (

@@ -1,17 +1,17 @@
 import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles((theme) => ({
-  menu: {
+  menu: (props) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '25%',
+    width: '65px',
     height: '100%',
     borderTopLeftRadius: '10px',
     borderBottomLeftRadius: '10px',
     backgroundColor: theme.blue.main,
-  },
+  }),
   upperIcons: {
     display: 'flex',
     flexDirection: 'column',
