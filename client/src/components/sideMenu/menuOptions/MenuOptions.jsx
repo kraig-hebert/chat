@@ -9,7 +9,6 @@ import { useStyles } from './menuOptionsStyles';
 import { selectActiveMenu } from '../../../reducers/appSettings';
 import TextInput from '../../common/textInput/TextInput';
 import DirectMessagesOptions from './directMessagesOptions/DirectMessagesOptions';
-import HomeOptions from './homeOptions/HomeOptions';
 import FriendsOptions from './friendsOptions/FriendsOptions';
 import HangoutsOptions from './hangoutsOptions/HangoutsOptions';
 import ExploreOptions from './exploreOptions/ExploreOptions';
