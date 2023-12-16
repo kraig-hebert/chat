@@ -22,11 +22,15 @@ export const useStyles = createUseStyles((theme) => ({
     fontSize: '.6rem',
     margin: '2px 0',
     padding: '0 2px',
-    borderRadius: '2px',
+    borderRadius: '5px',
     cursor: 'pointer',
     '&:hover': {
       backgroundColor: theme.dark.quarterAlpha,
     },
+  },
+  activeMember: {
+    extend: 'memberName',
+    backgroundColor: theme.dark.quarterAlpha,
   },
   statusBadge: {
     display: 'flex',

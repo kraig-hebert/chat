@@ -9,6 +9,9 @@ function useCloseOnClickAway(targetRef, isOpen, setIsOpen) {
         targetRef.current &&
         !targetRef.current.contains(event.target)
       ) {
+        console.log(
+          'for some reason this blocks bug that leaves Popover open and allows it to close....no idea'
+        );
         setIsOpen(false);
         firstRender.current = true;
       } else firstRender.current = false;
