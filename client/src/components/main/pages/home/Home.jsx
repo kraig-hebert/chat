@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import { useStyles } from './homeStyles';
 import HomePanel from './homePanel/HomePanel';
-import Messages from './messages/Messages';
+import MessagesPanel from './messagesPanel/MessagesPanel';
+import FriendsPanel from './friendsPanel/FriendsPanel';
+import HangoutsPanel from './hangoutsPanel/HangoutsPanel';
 
 const Home = (props) => {
   const { height } = props;
@@ -11,7 +13,13 @@ const Home = (props) => {
 
   return (
     <div className={classes.home}>
-      <HomePanel children={<Messages />} />
+      <div className={classes.homePanelRow}>
+        <HomePanel children={<MessagesPanel />} title="Newest Messages" />
+      </div>
+      <div className={classes.homePanelRow}>
+        <HomePanel children={<FriendsPanel />} title="Friend Requests" />
+        <HomePanel children={<HangoutsPanel />} title="Hangouts Activity" />
+      </div>
     </div>
   );
 };
