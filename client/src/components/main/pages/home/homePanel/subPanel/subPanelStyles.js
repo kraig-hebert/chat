@@ -1,17 +1,15 @@
 import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles((theme) => ({
-  homePanel: {
+  subPanel: {
     position: 'relative',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: theme.blue.main,
-    borderRadius: '5px',
-    padding: '3px',
-    margin: '0 5px',
-    width: '100%',
-    // filter: `drop-shadow(0 0 2px ${theme.secondary.main})`,
+    alignItems: 'flex-start',
+    width: '50%',
+    height: '100%',
+    padding: '5px',
   },
   titleBar: {
     position: 'absolute',

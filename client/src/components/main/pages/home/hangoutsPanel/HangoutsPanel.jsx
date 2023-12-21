@@ -9,4 +9,6 @@ const HangoutsPanel = (props) => {
   return <div className={classes.hangouts}>Hangouts Panel</div>;
 };
 
+HangoutsPanel.propTypes = {};
+
 export default HangoutsPanel;

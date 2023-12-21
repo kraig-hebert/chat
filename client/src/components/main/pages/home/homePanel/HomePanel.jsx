@@ -9,7 +9,7 @@ const HomePanel = (props) => {
   return (
     <div className={classes.homePanel}>
       {children}
-      <dix className={classes.titleBar}>{title}</dix>
+      {title && <div className={classes.titleBar}>{title}</div>}
     </div>
   );
 };

@@ -14,7 +14,7 @@ const Home = (props) => {
   return (
     <div className={classes.home}>
       <div className={classes.homePanelRow}>
-        <HomePanel children={<MessagesPanel />} title="Newest Messages" />
+        <HomePanel children={<MessagesPanel />} />
       </div>
       <div className={classes.homePanelRow}>
         <HomePanel children={<FriendsPanel />} title="Friend Requests" />
