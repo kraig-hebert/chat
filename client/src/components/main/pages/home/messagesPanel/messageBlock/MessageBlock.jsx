@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { useStyles } from './messageBlockStyles';
 
 const MessageBlock = (props) => {
-  console.log(props);
   const { blockType } = props;
   const classes = useStyles();
 
@@ -16,8 +15,6 @@ const MessageBlock = (props) => {
   };
 
   const blockStyles = setBlockType();
-
-  console.log(blockType);
 
   return (
     <div className={`${classes.messageBlock} ${blockStyles.borderRadius}`}>

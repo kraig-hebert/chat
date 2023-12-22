@@ -5,7 +5,7 @@ import { useStyles } from './badgeStyles';
 
 const Badge = (props) => {
   const { badgeCount } = props;
-  const classes = useStyles({ badgeCount });
+  const classes = useStyles({ ...props });
   return <div className={classes.badge}>{badgeCount}</div>;
 };
 
