@@ -4,6 +4,8 @@ export const useStyles = createUseStyles((theme) => ({
   messageBlock: {
     position: 'relative',
     display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     width: '90%',
     height: '50px',
     margin: '5px 0',

@@ -78,16 +78,19 @@ export const users = [
 
 export const groups = [
   {
+    id: 1,
     title: 'Siblings',
     members: [1, 4, 3],
     unread: 2,
   },
   {
+    id: 2,
     title: 'Homies',
     members: [7, 6, 3],
     unread: 0,
   },
   {
+    id: 3,
     title: 'Enemies',
     members: [8, 5],
     unread: 6,

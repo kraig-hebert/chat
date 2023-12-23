@@ -2,30 +2,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './messageBlockStyles';
+import ProfilePic from '../../../../../common/profilePic/ProfilePic';
 
 const MessageBlock = (props) => {
-  const { blockType } = props;
+  const { blockType, group, user } = props;
   const classes = useStyles();
 
-  const setBlockType = () => {
-    if (blockType === 'Solo')
-      return { borderRadius: classes.borderRight, type: classes.soloType };
-    else if (blockType === 'Group')
-      return { borderRadius: classes.borderLeft, type: classes.groupType };
+  const buildMessageBlock = () => {
+    if (blockType === 'Solo') {
+      return (
+        <div className={`${classes.messageBlock} ${classes.borderRight}`}>
+          <ProfilePic status={user.onlineStatus} username={user.username} />
+
+          <div className={classes.soloType}>{blockType}</div>
+        </div>
+      );
+    } else if (blockType === 'Group') {
+      return (
+        <div className={`${classes.messageBlock} ${classes.borderLeft}`}>
+          <ProfilePic status="none" username={group.title} />
+
+          <div className={classes.groupType}>{blockType}</div>
+        </div>
+      );
+    }
   };
 
-  const blockStyles = setBlockType();
+  const renderedMessageBlock = buildMessageBlock();
 
-  return (
-    <div className={`${classes.messageBlock} ${blockStyles.borderRadius}`}>
-      block
-      <div className={blockStyles.type}>{blockType}</div>
-    </div>
-  );
+  return <>{renderedMessageBlock}</>;
 };
 
 MessageBlock.propTypes = {
   blockType: PropTypes.string,
+  user: PropTypes.object,
+  group: PropTypes.object,
 };
 
 export default MessageBlock;
