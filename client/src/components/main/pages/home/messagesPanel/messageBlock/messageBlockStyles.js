@@ -11,6 +11,10 @@ export const useStyles = createUseStyles((theme) => ({
     margin: '5px 0',
     backgroundColor: theme.tertiary.main,
     filter: `drop-shadow(-1px 1px 1px ${theme.mainBG.main})`,
+    '& p': {
+      fontSize: '.85em',
+      color: theme.mainBG.main,
+    },
   },
   borderLeft: {
     borderTopLeftRadius: '5px',
@@ -42,7 +46,7 @@ export const useStyles = createUseStyles((theme) => ({
   divider: {
     display: 'block',
     width: '3px',
-    height: '75%',
+    height: '70%',
     backgroundColor: theme.blue.main,
     margin: '0 20px',
   },
@@ -56,6 +60,7 @@ export const useStyles = createUseStyles((theme) => ({
     backgroundColor: theme.blue.main,
     writingMode: 'vertical-lr',
     padding: '3px',
+    fontSize: '.75rem',
   },
   soloType: {
     extend: 'type',

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
+import { LoremIpsum } from 'lorem-ipsum';
 
 import { useStyles } from './messageBlockStyles';
 import ProfilePic from '../../../../../common/profilePic/ProfilePic';
@@ -8,6 +9,12 @@ import ProfilePic from '../../../../../common/profilePic/ProfilePic';
 const MessageBlock = (props) => {
   const { blockType, group, user } = props;
   const classes = useStyles();
+  const lorem = new LoremIpsum({
+    wordsPerSentence: {
+      max: 10,
+      min: 4,
+    },
+  });
 
   const buildMessageBlock = () => {
     if (blockType === 'Solo') {
@@ -22,6 +29,7 @@ const MessageBlock = (props) => {
             </p>
           </div>
           <div className={classes.divider}></div>
+          <p>{lorem.generateSentences(1)}</p>
           <div className={classes.soloType}>{blockType}</div>
         </div>
       );
@@ -37,6 +45,7 @@ const MessageBlock = (props) => {
             </p>
           </div>
           <div className={classes.divider}></div>
+          <p>{lorem.generateSentences(1)}</p>
           <div className={classes.groupType}>{blockType}</div>
         </div>
       );

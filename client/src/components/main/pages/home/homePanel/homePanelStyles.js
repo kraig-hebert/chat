@@ -24,6 +24,7 @@ export const useStyles = createUseStyles((theme) => ({
     padding: '5px',
     borderTopLeftRadius: '3px',
     borderBottomLeftRadius: '3px',
+    borderTopRightRadius: '5px',
     fontSize: '.85rem',
   },
 }));
