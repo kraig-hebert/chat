@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  activeMenu: 'direct-messages',
+  activeMenu: 'home',
   activeDirectMessageThread: 'XjsmithX',
   activeFriendsOption: 'all',
   curtainSlider: {

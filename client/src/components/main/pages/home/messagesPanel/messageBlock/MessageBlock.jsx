@@ -17,7 +17,7 @@ const MessageBlock = (props) => {
           <div className={classes.messageHeader}>
             <p>{user.username}</p>
             <p>
-              Newest Message:{' '}
+              Newest Message:
               <span>{format(new Date(), 'eee hh:mm:ss aaa')}</span>
             </p>
           </div>
@@ -32,7 +32,7 @@ const MessageBlock = (props) => {
           <div className={classes.messageHeader}>
             <p>{group.title}</p>
             <p>
-              Newest Message:{' '}
+              Newest Message:
               <span>{format(new Date(), 'eee hh:mm:ss aaa')}</span>
             </p>
           </div>
