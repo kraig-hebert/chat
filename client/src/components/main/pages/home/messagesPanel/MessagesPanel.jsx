@@ -30,7 +30,7 @@ const MessagesPanel = (props) => {
     }
 
     for (let i = 0; i < groupTotal; i++) {
-      const group = groups[i];
+      const group = groups[groupStart + i];
       messageBlocks.push(
         <MessageBlock key={idCounter} blockType="Group" group={group} />
       );

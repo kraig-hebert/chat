@@ -13,7 +13,7 @@ const MessageBlock = (props) => {
       return (
         <div className={`${classes.messageBlock} ${classes.borderRight}`}>
           <ProfilePic status={user.onlineStatus} username={user.username} />
-
+          {user.username}
           <div className={classes.soloType}>{blockType}</div>
         </div>
       );
@@ -21,6 +21,7 @@ const MessageBlock = (props) => {
       return (
         <div className={`${classes.messageBlock} ${classes.borderLeft}`}>
           <ProfilePic status="none" username={group.title} />
+          {group.title}
 
           <div className={classes.groupType}>{blockType}</div>
         </div>
