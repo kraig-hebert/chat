@@ -20,6 +20,32 @@ export const useStyles = createUseStyles((theme) => ({
     borderTopRightRadius: '5px',
     borderBottomRightRadius: '5px',
   },
+  messageHeader: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    width: '150px',
+    '& p:first-of-type': {
+      fontSize: '.85rem',
+      fontWeight: '700',
+      color: theme.mainBG.main,
+    },
+    '& p:last-of-type': {
+      fontSize: '.55rem',
+      color: theme.mainBG.main,
+      '& span': {
+        color: theme.light.main,
+      },
+    },
+  },
+  divider: {
+    display: 'block',
+    width: '3px',
+    height: '75%',
+    backgroundColor: theme.blue.main,
+    margin: '0 20px',
+  },
   type: {
     position: 'absolute',
     top: '0',

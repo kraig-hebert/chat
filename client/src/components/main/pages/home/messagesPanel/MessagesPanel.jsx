@@ -20,7 +20,9 @@ const MessagesPanel = (props) => {
     else soloStart = randomize(6);
     const groupTotal = randomize(2);
     const groupStart = randomize(2) - 1;
+
     let idCounter = 1;
+    // create user message blocks
     for (let i = 0; i < soloTotal; i++) {
       const user = users[soloStart - 1 + i];
       messageBlocks.push(
@@ -28,7 +30,7 @@ const MessagesPanel = (props) => {
       );
       idCounter++;
     }
-
+    //create group message block
     for (let i = 0; i < groupTotal; i++) {
       const group = groups[groupStart + i];
       messageBlocks.push(
