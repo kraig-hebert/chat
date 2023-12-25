@@ -31,5 +31,8 @@ export const useStyles = createUseStyles((theme) => ({
     padding: '10px',
     borderRadius: '5px',
     backgroundColor: props.backgroundColor,
+    '& p': {
+      fontSize: '.85rem',
+    },
   }),
 }));
