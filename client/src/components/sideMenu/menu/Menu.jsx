@@ -44,7 +44,7 @@ const Menu = (props) => {
         <MenuIcon
           icon={<IoPeopleOutline />}
           activeIcon={<IoPeople />}
-          menuName="friends"
+          menuName="friends/pending"
         />
         <MenuIcon
           icon={<IoBusinessOutline />}

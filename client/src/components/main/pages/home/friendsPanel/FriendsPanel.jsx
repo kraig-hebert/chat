@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { useStyles } from './friendsPanelStyles';
-import { menuIconSelected } from '../../../../../reducers/appSettings';
+import {
+  menuIconSelected,
+  friendsOptionSelected,
+} from '../../../../../reducers/appSettings';
 
 const FriendsPanel = (props) => {
   const {} = props;
@@ -13,7 +16,8 @@ const FriendsPanel = (props) => {
   const navigate = useNavigate();
   const handleTotalNumberClick = () => {
     dispatch(menuIconSelected('friends'));
-    navigate('/friends');
+    dispatch(friendsOptionSelected('pending'));
+    navigate('/friends/pending');
   };
   return (
     <div className={classes.friends}>
