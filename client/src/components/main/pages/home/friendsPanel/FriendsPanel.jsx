@@ -22,14 +22,14 @@ const FriendsPanel = (props) => {
   return (
     <div className={classes.friends}>
       <div className={classes.requestGroup}>
-        <h2>Incoming Requests</h2>
+        <h2>Incoming</h2>
         <div className={classes.totalNumber} onClick={handleTotalNumberClick}>
           1
         </div>
       </div>
       <div className={classes.divider}></div>
       <div className={classes.requestGroup}>
-        <h2>Outgoing Requests</h2>
+        <h2>Outgoing</h2>
         <div className={classes.totalNumber} onClick={handleTotalNumberClick}>
           2
         </div>
