@@ -14,7 +14,6 @@ export const useStyles = createUseStyles((theme) => ({
     height: '15px',
     backgroundColor: theme.blue.main,
     color: theme.light.main,
-    outline: `3px solid ${theme.secondary.main}`,
     borderRadius: '50%',
   }),
 }));

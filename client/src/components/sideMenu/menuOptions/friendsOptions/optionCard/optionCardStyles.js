@@ -11,6 +11,7 @@ export const useStyles = createUseStyles((theme) => ({
     backgroundColor: theme.tertiary.main,
     borderRadius: '5px',
     cursor: 'pointer',
+    filter: `drop-shadow(-1px 1px 1px ${theme.mainBG.main})`,
     '& p': {
       marginLeft: '10px',
       fontSize: '1.15rem',
