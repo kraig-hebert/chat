@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import UserCard from '../userCard/UserCard';
+import Panel from '../../../../common/panel/Panel';
 import { selectAllFriends } from '../../../../../reducers/userData';
 import { useStyles } from './allFriendsStyles';
 
@@ -15,7 +16,15 @@ const AllFriends = (props) => {
     <UserCard user={user} key={index} />
   ));
 
-  return <div className={classes.allFriends}>{renderedUserCards}</div>;
+  const PanelGuts = () => {
+    return <div className={classes.friendsPanel}>{renderedUserCards}</div>;
+  };
+
+  return (
+    <div className={classes.allFriends}>
+      <Panel children={<PanelGuts />} title="All Friends" />
+    </div>
+  );
 };
 
 AllFriends.propTypes = {};

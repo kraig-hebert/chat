@@ -10,6 +10,8 @@ export const useStyles = createUseStyles((theme) => ({
     marginTop: '10px',
     overflowY: 'scroll',
     overflowX: 'hidden',
+    padding: '5px',
+
     '&::-webkit-scrollbar': {
       width: '10px',
     },
@@ -28,11 +30,9 @@ export const useStyles = createUseStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    marginBottom: '25px',
-    '& h2': {
-      width: '95%',
-      fontSize: '1.1rem',
-      color: theme.tertiary.main,
-    },
+    backgroundColor: theme.secondary.main,
+    borderRadius: '5px',
+    width: '100%',
+    paddingTop: '15px',
   },
 }));

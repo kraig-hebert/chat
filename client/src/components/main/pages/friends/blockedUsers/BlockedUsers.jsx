@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import UserCard from '../userCard/UserCard';
+import Panel from '../../../../common/panel/Panel';
 import { selectBlockedUsers } from '../../../../../reducers/userData';
 import { useStyles } from './blockedUsersStyles';
 
@@ -16,6 +17,10 @@ const BlockedUsers = (props) => {
     <UserCard user={user} key={index} />
   ));
 
+  const BlockedGroup = (props) => {
+    return <div className={classes.blockedGroup}>{props.userCard}</div>;
+  };
+
   const incomingBlockedUserCards = renderedUserCards.filter(
     (card) => card.props.user.blockDirection === 'in'
   );
@@ -25,14 +30,14 @@ const BlockedUsers = (props) => {
 
   return (
     <div className={classes.blockedUsers}>
-      <div className={classes.blockedGroup}>
-        <h2>Blocked By User</h2>
-        {incomingBlockedUserCards}
-      </div>
-      <div className={classes.blockedGroup}>
-        <h2>Blocked Users</h2>
-        {outgoingBlockedUserCards}
-      </div>
+      <Panel
+        children={<BlockedGroup userCard={incomingBlockedUserCards} />}
+        title="Blocked by User"
+      />
+      <Panel
+        children={<BlockedGroup userCard={outgoingBlockedUserCards} />}
+        title="Blocked User"
+      />
     </div>
   );
 };

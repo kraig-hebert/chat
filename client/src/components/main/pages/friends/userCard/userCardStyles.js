@@ -8,7 +8,6 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     width: '95%',
     padding: '5px',
-    borderBottom: `1px solid ${theme.tertiary.halfAlpha}`,
   },
   userInfo: {
     display: 'flex',
@@ -22,8 +21,9 @@ export const useStyles = createUseStyles((theme) => ({
     justifyContent: 'center',
     '& p': {
       '&:first-of-type': {
-        color: theme.tertiary.main,
+        color: theme.mainBG.main,
         fontSize: '.8rem',
+        fontWeight: '600',
       },
       '&:last-of-type': {
         color: theme.light.main,

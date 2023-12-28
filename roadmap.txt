@@ -2,8 +2,14 @@ BUG FIXES
 -------------------------------------------------------------------------
 - when user navigates backwards and forwards the active MenuIcon does not change with the page route
 
+DIRECT-MESAGES
+- use the direct message active thread to bring you direct to that thread when clicking back into direct messages from another page
+    - right now it will show the right thread but the side menu options don't reflect the active thread 
+
 FRIENDS
 - figure out way to either stop the app from opening solo message when you click options icon or force the group options icon to select the group thread
+- when routing to friends the active friends option does not follow the click
+    - add createAsyncThunk to reducer so that you can force the multiple dispatches onClick
 
 *************************************************************************
 
@@ -21,10 +27,3 @@ DIRECT-MESSAGES
 FRIENDS
 - create cardoptions for each type of friend page
 
-HOME
-- hide side options and only show blue bar, while widing main stage
-- show cards of different quick options
-    - new messages
-    - hangouts with most activity
-    - number of friend requests and acceptances
-    - pending hangout requests and acceptances

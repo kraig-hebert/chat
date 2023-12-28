@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import UserCard from '../userCard/UserCard';
+import Panel from '../../../../common/panel/Panel';
 import { selectPendingFriends } from '../../../../../reducers/userData';
 import { useStyles } from './pendingFriendsStyles';
 
@@ -16,6 +17,10 @@ const PendingFriends = (props) => {
     <UserCard user={user} key={index} />
   ));
 
+  const RequestGroup = (props) => {
+    return <div className={classes.requestGroup}>{props.userCard}</div>;
+  };
+
   const incomingRequestUserCards = renderedUserCards.filter(
     (card) => card.props.user.requestDirection === 'in'
   );
@@ -24,14 +29,14 @@ const PendingFriends = (props) => {
   );
   return (
     <div className={classes.pendingFriends}>
-      <div className={classes.requestGroup}>
-        <h2>Incoming Requests</h2>
-        {incomingRequestUserCards}
-      </div>
-      <div className={classes.requestGroup}>
-        <h2>Outgoing Requests</h2>
-        {outgoingRequestUserCards}
-      </div>
+      <Panel
+        children={<RequestGroup userCard={incomingRequestUserCards} />}
+        title="Incoming Requests"
+      />
+      <Panel
+        children={<RequestGroup userCard={outgoingRequestUserCards} />}
+        title="Outoing Requests"
+      />
     </div>
   );
 };
