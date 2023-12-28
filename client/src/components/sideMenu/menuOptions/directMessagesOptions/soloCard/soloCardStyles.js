@@ -13,6 +13,9 @@ export const useStyles = createUseStyles((theme) => ({
     borderRadius: '5px',
     cursor: 'pointer',
     filter: `drop-shadow(-1px 1px 1px ${theme.mainBG.main})`,
+    '&:hover': {
+      filter: `drop-shadow(-1px 1px 3px ${theme.mainBG.main})`,
+    },
   },
   activeSoloCard: {
     extend: 'soloCard',

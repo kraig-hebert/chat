@@ -8,6 +8,10 @@ export const useStyles = createUseStyles((theme) => ({
     alignItems: 'center',
     width: '95%',
     padding: '5px',
+    borderBottom: `1px solid ${theme.mainBG.main}`,
+    '&:last-of-type': {
+      borderBottom: 'none',
+    },
   },
   userInfo: {
     display: 'flex',

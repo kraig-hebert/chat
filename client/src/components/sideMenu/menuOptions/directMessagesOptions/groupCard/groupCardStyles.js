@@ -13,6 +13,9 @@ export const useStyles = createUseStyles((theme) => ({
     backgroundColor: theme.tertiary.main,
     borderRadius: '5px',
     filter: `drop-shadow(-1px 1px 1px ${theme.mainBG.main})`,
+    '&:hover': {
+      filter: `drop-shadow(-1px 1px 3px ${theme.mainBG.main})`,
+    },
   },
   activeGroupCard: {
     extend: 'groupCard',

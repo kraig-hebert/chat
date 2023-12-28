@@ -33,6 +33,6 @@ export const useStyles = createUseStyles((theme) => ({
     backgroundColor: theme.secondary.main,
     borderRadius: '5px',
     width: '100%',
-    paddingTop: '15px',
+    paddingTop: '20px',
   },
 }));
