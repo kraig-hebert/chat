@@ -14,11 +14,11 @@ const Home = (props) => {
   return (
     <div className={classes.home}>
       <div className={classes.homePanelRow}>
-        <HomePanel children={<MessagesPanel />} title="Newest Messages" />
+        <HomePanel children={<MessagesPanel />} title="Messages" />
       </div>
       <div className={classes.homePanelRow}>
         <HomePanel children={<FriendsPanel />} title="Friend Requests" />
-        <HomePanel children={<HangoutsPanel />} title="Hangouts Activity" />
+        <HomePanel children={<HangoutsPanel />} title="Favorite Hangouts" />
       </div>
     </div>
   );

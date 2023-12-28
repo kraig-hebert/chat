@@ -96,3 +96,5 @@ export const groups = [
     unread: 6,
   },
 ];
+
+export const hangouts = [{}];
