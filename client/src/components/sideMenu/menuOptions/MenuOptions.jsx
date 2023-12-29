@@ -30,7 +30,7 @@ const MenuOptions = (props) => {
 
   return (
     <div className={classes.menuOptions}>
-      {activeMenu !== 'home' && activeMenu !== 'friends' && (
+      {activeMenu !== 'home' && (
         <TextInput
           width="80%"
           height="30px"
